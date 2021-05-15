@@ -1,35 +1,47 @@
-<form (ngSubmit)="loginUser()" [hidden]=!disappear>
-    <table>
-        <tr>
-            <td>UserName </td>
-            <td><input type="text" name="userName" [(ngModel)]=login.userName></td>
-        </tr>
-        <tr>
-            <td>Password</td>
-            <td><input type="password" name="password" [(ngModel)]=login.password></td>
-        </tr>
-        <tr>
-            <td><button type="submit">Login</button></td>
-            <td><button type="reset">Reset</button></td>
-        </tr>
-        <tr>
-            <td><button type="button" (click)="toggle()">Forgot Password</button></td>
-        </tr>
-    </table>
-</form>
-<form [hidden]=pwd (ngSubmit)="forgotPwd()">
-    <table>
-        <tr>
-            <td>UserName</td>
-            <td><input type="userName" name="userName" [(ngModel)]=userName></td>
-        </tr>
-        <tr>
-            <td><button type="submit">Forgot Pasword</button></td>
-            <td><button type="button" (click)="toggle()">Login</button></td>
-        </tr>
-    </table>
-</form>
-<div [hidden] = !loggedIn>
-    <input type="text" placeholder="Registration No." name="registrationNo" [(ngModel)]="registrationNo">
-    <button type="button" (click)="addVehicle()">Get Insurance</button>
+<div class="bg">
+    <div class="container">
+        <div class="title"> Login</div>
+    <form (ngSubmit)="loginUser()" [hidden]=!disappear #authfrm=ngForm>
+        <table>
+            <tr>
+                <td>UserName </td>
+                <td><input type="text" name="userName" required pattern="[a-zA-Z]{3,}" #Username="ngModel" [(ngModel)]=login.userName class='form-control'>
+                    <span *ngIf="Username.dirty && Username.invalid" class="alert alert-danger">
+                        Username is empty or invalid
+                       </span> </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password" required pattern="[A-Za-z0-9]{7,}" #Password="ngModel" [(ngModel)]=login.password class='form-control'>
+                    <span *ngIf="Password.dirty && Password.invalid" class="alert alert-danger">
+                        Password is empty or invalid
+                    </span></td>
+            </tr>
+            <tr>
+                <td><button type="submit" [disabled]=!authfrm.valid>Login</button></td>
+                <td><button type="reset">Reset</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" (click)="toggle()">Forgot Password</button></td>
+            </tr>
+        </table>
+    </form>
+    <form [hidden]=pwd (ngSubmit)="forgotPwd()">
+        <table>
+            <tr>
+                <td>UserName</td>
+                <td><input type="userName" name="userName" [(ngModel)]=userName>
+                    </td>
+            </tr>
+            <tr>
+                <td><button type="submit" >Forgot Pasword</button></td>
+                <td><button type="button" (click)="toggle()">Login</button></td>
+            </tr>
+        </table>
+    </form>
+    <div [hidden] = !loggedIn>
+        <input type="text" placeholder="Registration No." name="registrationNo" [(ngModel)]="registrationNo">
+        <button type="button" (click)="addVehicle()">Get Insurance</button>
+    </div>
+</div>
 </div>
