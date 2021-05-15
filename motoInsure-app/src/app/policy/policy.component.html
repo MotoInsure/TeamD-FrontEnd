@@ -1,0 +1,115 @@
+<div class="bg">
+  
+<div class = "container" >
+  <br>
+  <div class = "row" style ="height: 10%">
+      <div class = "col-md-4">
+          <h1>Third-Party Policy Plans</h1>
+      </div>
+      <div class = "col-md-4" >
+          
+      </div>
+      <div class = "col-md-4">
+
+      </div>
+  </div>
+  <div class = "row" style = "height: 30%" >
+    <!-- <div class="col-md-1" style="background-color: white">
+    </div> -->
+      <div class="col-md-3" >
+          <div class="card" style ="background-color: white">
+              <div class="card-body text-center">
+                  <h3>1 Year Plan</h3>
+                <p class="card-text">Policy Amount : {{thirdpartyPolicyAmount|currency:'INR':'symbol'}}</p><br>
+                <p class="card-text">Max Claim Amount : {{maxClaimAmount|currency:'INR':'symbol'}}</p><br>
+                <p class="card-text">Expiry Date : {{expiryDate1|date:"mediumDate"}}</p><br>
+                <button type="button" class="btn btn-success btn1" (click)="navigate(1)">BUY</button>
+              </div>
+            </div>
+      </div>
+      <div class="col-md-1">
+      </div>
+      <div class="col-md-3" >
+          <div class="card" style ="background-color: white">
+              <div class="card-body text-center">
+                  <h3>3 Year Plan</h3>
+                <p class="card-text">Policy Amount : {{thirdpartyPolicyAmount*3 *0.9|currency:'INR':'symbol'}}</p><br>
+                <p class="card-text">Max Claim Amount : {{maxClaimAmount|currency:'INR':'symbol'}}</p><br>
+                <p class="card-text">Expiry Date : {{expiryDate3|date:"mediumDate"}}</p><br>
+                <button type="button" class="btn btn-success btn2" (click)="navigate(2)">BUY</button>
+              </div>
+            </div>
+      </div>
+      <div class="col-md-1 " >
+      </div>
+      <div class="col-md-3" >
+          <div class="card" style ="background-color: white">
+              <div class="card-body text-center">
+                  <h3>5 Year Plan</h3>
+                <p class="card-text">Policy Amount : {{thirdpartyPolicyAmount*5*0.75|currency:'INR':'symbol'}}</p><br>
+                <p class="card-text">Max Claim Amount :{{maxClaimAmount|currency:'INR':'symbol'}}</p><br>
+                <p class="card-text">Expiry Date : {{expiryDate5|date:"mediumDate"}}</p><br>
+                <button type="button" class="btn btn-success btn3" (click)="navigate(3)">BUY</button>
+              </div>
+            </div>
+      </div>
+  </div>
+  <br>
+  <br>
+
+  <div class = "row" style ="height: 10%">
+      <div class = "col-md-6">
+          <h1>Comprehensive Policy Plans</h1>
+      </div>
+      <div class = "col-md-3">
+          
+      </div>
+      <div class = "col-md-3">
+
+      </div>
+  </div>
+  <div class = "row" style = "height: 30%" >
+    <!-- <div class="col-md-1" style="background-color: white">
+    </div>     -->
+      <div class="col-md-3" >
+          <div class="card" style ="background-color: white">
+              <div class="card-body text-center">
+                  <h3>1 Year Plan</h3>
+                <p class="card-text">Policy Amount : {{comprehensivePolicyAmount|currency:'INR':'symbol'}}</p><br>
+                <p class="card-text">Max Claim Amount : {{maxClaimAmount|currency:'INR':'symbol'}}</p><br>
+                <p class="card-text">Expiry Date :{{expiryDate1|date:"mediumDate"}}</p><br>
+                <button type="button" class="btn btn-success btn4" (click)="navigate(4)">BUY</button>
+              </div>
+            </div>
+      </div>
+      <div class="col-md-1 ">
+      </div>
+      <div class="col-md-3" >
+          <div class="card" style ="background-color: white">
+              <div class="card-body text-center">
+                  <h3>3 Year Plan</h3>
+                <p class="card-text">Policy Amount : {{comprehensivePolicyAmount*3*0.9|currency:'INR':'symbol'}}</p><br>
+                <p class="card-text">Max Claim Amount : {{maxClaimAmount|currency:'INR':'symbol'}}</p><br>
+                <p class="card-text">Expiry Date : {{expiryDate3|date:"mediumDate"}}</p><br>
+                <button type="button" class="btn btn-success btn5" (click)="navigate(5)">BUY</button>
+              </div>
+            </div>
+      </div>
+      <div class="col-md-1 ">
+      </div>
+      <div class="col-md-3">
+          <div class="card" style ="background-color: white">
+              <div class="card-body text-center">
+                  <h3>5 Year Plan</h3>
+                <p class="card-text">Policy Amount : {{comprehensivePolicyAmount*5*0.75|currency:'INR':'symbol'}}</p><br>
+                <p class="card-text">Max Claim Amount : {{maxClaimAmount|currency:'INR':'symbol'}}</p><br>
+                <p class="card-text">Expiry Date : {{expiryDate5|date:"mediumDate"}}</p><br>
+                <button type="button" class="btn btn-success btn6"(click)="navigate(6)">BUY</button>
+              </div>
+            </div>
+      </div>
+  </div>
+  
+</div>
+
+</div>

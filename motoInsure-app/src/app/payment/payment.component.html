@@ -1,0 +1,102 @@
+<div class= "bg">
+    <div class="padding" *ngIf = "!isPaid" >
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Payment Details</strong>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="paymentForm">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="name">Name on Card</label>
+                                        <input formControlName="name" class="form-control" id="name" type="text" placeholder="Enter your name" required >
+                                        <p *ngIf="paymentForm.controls.name.invalid && paymentForm.controls.name.dirty" class="alert alert-danger">Enter Valid Name</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="ccnumber">Card Number</label>
+                                        <!-- <div class="input-group"> -->
+                                            <input formControlName="cardNumber" class="form-control" type="text" placeholder="0000 0000 0000 0000" autocomplete="email" required>
+                                            <p *ngIf="paymentForm.controls.cardNumber.invalid && paymentForm.controls.cardNumber.dirty" class="alert alert-danger">Enter 16 digit valid number</p>
+                                            <!-- <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="mdi mdi-credit-card"></i>
+                                                </span>
+                                            </div> -->
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="ccmonth">Month</label>
+                                    <select class="form-control" id="ccmonth">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group col-sm-6">
+                                    <label for="ccyear">Year</label>
+                                    <select class="form-control" id="ccyear">
+                                        <option>2021</option>
+                                        <option>2022</option>
+                                        <option>2023</option>
+                                        <option>2024</option>
+                                        <option>2025</option>
+                                        <option>2026</option>
+                                        <option>2027</option>
+                                        <option>2028</option>
+                                        <option>2029</option>
+                                        <option>2030</option>
+                                        <option>2031</option>
+                                    </select>
+                                </div>
+                                <!-- <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <input formControlName="cvv" class="form-control" id="cvv" type="text" placeholder="cvv">
+                                        <p *ngIf="paymentForm.controls.cvv.errors" class="alert alert-danger">X</p>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <div class ="row">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <input formControlName="cvv" class="form-control" id="cvv" type="password" placeholder="Enter cvv">
+                                        <p *ngIf="paymentForm.controls.cvv.invalid && paymentForm.controls.cvv.dirty" class="alert alert-danger">Enter a valid CVV</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>    
+                    <div class="card-footer">
+                        <button class="btn btn-sm btn-success float-right" [disabled]="paymentForm.invalid" type="submit" (click)="toggle()">
+                            <i class="mdi mdi-gamepad-circle" ></i> Pay</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-success" *ngIf = "isPaid">
+        <strong>Success!</strong> Payment Done.
+      </div>
+</div>

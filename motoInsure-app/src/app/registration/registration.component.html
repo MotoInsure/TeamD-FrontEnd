@@ -1,0 +1,112 @@
+<div class="bg">
+	<div class="container">
+		<div class="title"> Register Here </div>
+		<form (ngSubmit)="onSubmit()" #logfrm = ngForm>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label>Username</label>
+                    <input type="text" name="Username" required pattern="[a-zA-Z]{3,}" #Username="ngModel" [(ngModel)]=user.userName 
+                    placeholder="Enter Your Name" class='form-control'>
+            
+                   <span *ngIf="Username.dirty && Username.invalid" class="alert alert-danger">
+                     Username is empty or less than 3 characters
+                    </span> 
+                </div>
+                <div class="col-md-6 form-group">
+                    <label>Phone Number</label>
+                    <input type="text" name="phonenum"  required pattern="^[789]\d{9}$ "  #phonenum="ngModel" [(ngModel)]=user.phoneNo
+                     placeholder="Enter Your Phone_number" class='form-control'>
+                     <span *ngIf="phonenum.dirty && phonenum.invalid" class="alert alert-danger">
+                        Invalid phone number.
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label>Password</label>
+                    <input type="password" name="Password"  required pattern="[A-Za-z0-9]{7,}" #Password="ngModel" [(ngModel)]=user.password
+                    placeholder="Enter Your Password" class='form-control'>
+                    <span *ngIf="Password.dirty && Password.invalid" class="alert alert-danger">
+                        Password is empty or invalid
+                    </span>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label>Re-Enter the Password</label>
+                    <input type="password" name="Password"  required pattern="[A-Za-z0-9]{7,}" #Password="ngModel" [(ngModel)]=user.password
+                     placeholder="Re-Enter Your Password" class='form-control'>
+                     <span *ngIf="Password.dirty && Password.invalid" class="alert alert-danger">
+                        Password is empty or invalid
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 form-group">
+                    <label>E-Mail</label>
+                    <input type="email" name="EmailId" #EmailId="ngModel" [(ngModel)]=user.email
+                    placeholder="xyz@gmail.com" class='form-control'>
+                    <span *ngIf="EmailId.dirty && EmailId.invalid" class="alert alert-danger">
+                        Email-Id is empty or invalid
+                    </span>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label>State</label>
+                    <input type="text" name="State"  [(ngModel)]=user.state  #State="ngModel" required pattern="[A-Z a-z]{3,}" 
+                    placeholder="Enter Your State" class='form-control'>
+                    <span *ngIf="State.dirty && State.invalid" class="alert alert-danger">
+                        Invalid Entry
+                    </span>
+                </div>
+            </div>
+                <div class="col-md-6 form-group">
+                    <label>City</label>
+                    <input type="text" name="City" [(ngModel)]=user.city required pattern="[A-Z a-z]{3,}" placeholder="City" class='form-control'>
+                </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button type="submit" [disabled]=!logfrm.valid class="btn btn-success btn-block btn-submit">Submit</button>
+                </div>
+            </div>
+		</form>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Done for the purpose of testing addPolicy method and it's working. -->
+
+
+<!-- <td><button (click)="toggle()">Vehicle</button></td>
+
+<div *ngIf="!submit">
+    <input type="number" placeholder="Policy id" name="policyId" [(ngModel)]="policyId">
+    <button type="button" (click)="addPolicy()"></button>
+</div> -->
+    
+    <!-- Done for the purpose of testing addVehicle method and it's working. -->
+
+    <!-- 
+        <td><button (click)="toggle()">Vehicle</button></td>
+
+<div *ngIf="!submit">
+    <input type="text" placeholder="Registration No." name="resgidtrationNo" [(ngModel)]="registrationNo">
+    <button type="button" (click)="addVehicle()"></button>
+</div> -->

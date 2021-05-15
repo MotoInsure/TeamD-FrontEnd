@@ -1,0 +1,35 @@
+<form (ngSubmit)="loginUser()" [hidden]=!disappear>
+    <table>
+        <tr>
+            <td>UserName </td>
+            <td><input type="text" name="userName" [(ngModel)]=login.userName></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="password" [(ngModel)]=login.password></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Login</button></td>
+            <td><button type="reset">Reset</button></td>
+        </tr>
+        <tr>
+            <td><button type="button" (click)="toggle()">Forgot Password</button></td>
+        </tr>
+    </table>
+</form>
+<form [hidden]=pwd (ngSubmit)="forgotPwd()">
+    <table>
+        <tr>
+            <td>UserName</td>
+            <td><input type="userName" name="userName" [(ngModel)]=userName></td>
+        </tr>
+        <tr>
+            <td><button type="submit">Forgot Pasword</button></td>
+            <td><button type="button" (click)="toggle()">Login</button></td>
+        </tr>
+    </table>
+</form>
+<div [hidden] = !loggedIn>
+    <input type="text" placeholder="Registration No." name="registrationNo" [(ngModel)]="registrationNo">
+    <button type="button" (click)="addVehicle()">Get Insurance</button>
+</div>
