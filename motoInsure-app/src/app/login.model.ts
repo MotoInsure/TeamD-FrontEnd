@@ -1,5 +1,5 @@
 export class Login{
     //phoneNo :number;
-    userName: string;
+    email: string;
     password: string;
 }

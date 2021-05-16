@@ -18,8 +18,8 @@ export class UserService {
   addUser(user :User){
     this.http.post(this.baseUri+"addUser",user).subscribe(data => data=user);
   }
-  async validateLogin(username : string, password: string){    
-    return await this.http.get<User>(this.baseUri+"auth?userName="+username+"&password="+password)
+  async validateLogin(email : string, password: string){    
+    return await this.http.get<User>(this.baseUri+"auth?email="+email+"&password="+password)
     .pipe(
       retry(1),
       catchError(this.handleError)

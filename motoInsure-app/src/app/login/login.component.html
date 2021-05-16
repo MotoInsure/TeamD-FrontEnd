@@ -4,15 +4,15 @@
     <form (ngSubmit)="loginUser()" [hidden]=!disappear #authfrm=ngForm>
         <table>
             <tr>
-                <td>UserName </td>
-                <td><input type="text" name="userName" required pattern="[a-zA-Z]{3,}" #Username="ngModel" [(ngModel)]=login.userName class='form-control'>
+                <td>Email </td>
+                <td><input type="email" name="userName" required  #Username="ngModel" [(ngModel)]=login.email class='form-control'>
                     <span *ngIf="Username.dirty && Username.invalid" class="alert alert-danger">
                         Username is empty or invalid
                        </span> </td>
             </tr>
             <tr>
                 <td>Password</td>
-                <td><input type="password" name="password" required pattern="[A-Za-z0-9]{7,}" #Password="ngModel" [(ngModel)]=login.password class='form-control'>
+                <td><input type="password" name="password" required #Password="ngModel" [(ngModel)]=login.password class='form-control'>
                     <span *ngIf="Password.dirty && Password.invalid" class="alert alert-danger">
                         Password is empty or invalid
                     </span></td>

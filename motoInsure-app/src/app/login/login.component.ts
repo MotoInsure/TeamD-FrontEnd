@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   loginUser(){    
     let user : User;
-    this.service.validateLogin(this.login.userName,this.login.password).then(
+    this.service.validateLogin(this.login.email,this.login.password).then(
       (result:User)=>{
         user = result;
         console.log(result);
