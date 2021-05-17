@@ -6,7 +6,7 @@ margin: 0;
 font-family: 'poppins',sans-serif;
  } 
 .bg{ 
- background: linear-gradient(135deg,#8ccbe9,#d0ebc4); 
+ background: linear-gradient(135deg,#e6a671,#5f59b6); 
     display: flex; 
     height: 100vh; 
     align-items: center;
@@ -28,7 +28,7 @@ font-family: 'poppins',sans-serif;
       font-family:cursive;
       font-size: 30px;
       color:cornsilk;
-      background-color:darkslategray;
+      background-color:rgba(45, 5, 78, 0.925);
       
     }
     table{
@@ -41,7 +41,7 @@ font-family: 'poppins',sans-serif;
       font-size: 16px;
     }
      
-    input[type=text], input[type=password], input[type=userName] {
+    input[type=text], input[type=password], input[type=email], input[type=userName] {
       margin: 5px;
       padding: 0 10px;
       font-size: 16px;
@@ -67,16 +67,15 @@ font-family: 'poppins',sans-serif;
     button[type=submit],[type=button],[type=reset] {
       padding: 0 18px;
       margin-top: 8px;
-      margin-bottom: 5px;
       margin-left: 8px;
       height: 30px;
       font-size: 14px;
       font-weight: bold;
-      color:teal;
+      color:rgb(180, 76, 6);
       text-shadow: 0 1px #e3f1f1;
-      background: #cde5ef;
+      background: #f0c2ac;
       border: 1px solid;
-      border-color: #04565e #04565e #04565e;
+      border-color: #ca510b #ca510b  #ca510b;
       border-radius: 18px;
       outline: 2;
       -webkit-box-sizing: content-box;
