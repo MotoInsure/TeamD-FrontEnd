@@ -37,8 +37,8 @@ export class UserService {
   async addVehicle(registration:string, user :User){
     // let user =User;
     // user = JSON.parse(localStorage.getItem("user"));
-    this.http.post(this.baseUri+"addVehicle/502/"+registration,user).toPromise();
-    //this.http.post(this.baseUri+"addVehicle/"+user.id+"/"+registration,user).toPromise(););
+    //this.http.post(this.baseUri+"addVehicle/502/"+registration,user).toPromise();
+    this.http.post(this.baseUri+"addVehicle/"+user.id+"/"+registration,user).toPromise();
   }
 
   async addPolicy(policyId:number,user:User){
