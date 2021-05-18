@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Policy } from '../policy.model';
 import { PolicyComponent } from '../policy/policy.component';
 import { PaymentService } from '../services/payment.service';
+import { User } from '../user.model';
 
 @Component({
   selector: 'app-payment',
@@ -28,9 +29,11 @@ export class PaymentComponent implements OnInit {
   }
 
   toggle(){
-    this.policy = JSON. parse(localStorage. getItem('currentPolicy'));
+    let user : User;
+    user = JSON.parse(localStorage.getItem("user"));
+    this.policy = JSON. parse(localStorage.getItem('currentPolicy'));
     console.log(this.policy);
-    this.paymentService.insertPolicy(this.policy).subscribe(
+    this.paymentService.insertPolicy(this.policy,user).subscribe(
       message => console.log(message)
     );
     this.isPaid = true;
