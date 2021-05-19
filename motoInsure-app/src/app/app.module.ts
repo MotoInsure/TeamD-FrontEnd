@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
@@ -21,6 +22,7 @@ import { PaymentService } from './services/payment.service';
 import { VehicleFormComponent } from './vehicle-form/vehicle-form.component';
 import { MatTableModule } from '@angular/material/table';
 import { DisplayIdvComponent } from './display-idv/display-idv.component';
+import { VehicleDisplayComponent } from './vehicle-display/vehicle-display.component';
 
 @NgModule({
   declarations: [ 
@@ -32,6 +34,7 @@ import { DisplayIdvComponent } from './display-idv/display-idv.component';
     PaymentComponent,
     VehicleFormComponent,
     DisplayIdvComponent,
+    VehicleDisplayComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { DisplayIdvComponent } from './display-idv/display-idv.component';
     MatButtonModule,
     MatSelectModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatCheckboxModule
   ],
   providers: [PolicyService, PaymentService],
   bootstrap: [AppComponent]
