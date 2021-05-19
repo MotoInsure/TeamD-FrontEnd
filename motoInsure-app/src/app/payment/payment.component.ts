@@ -15,6 +15,7 @@ export class PaymentComponent implements OnInit {
   isPaid : boolean =false;
   paymentForm : FormGroup;
   policy : Policy;
+  savedPolicyId : number;
 
   constructor(private formBuilder: FormBuilder, private paymentService: PaymentService) {
 
@@ -34,7 +35,12 @@ export class PaymentComponent implements OnInit {
     this.policy = JSON. parse(localStorage.getItem('currentPolicy'));
     console.log(this.policy);
     this.paymentService.insertPolicy(this.policy,user).subscribe(
-      message => console.log(message)
+      message => console.log(message),
+      error => {
+        this.savedPolicyId=error.error.text.split(":")[1];
+        console.log(this.savedPolicyId);
+      }
+
     );
     this.isPaid = true;
   }
