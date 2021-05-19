@@ -1,112 +1,85 @@
 <div class="bg">
 	<div class="container">
 		<div class="title"> Register Here </div>
-		<form (ngSubmit)="onSubmit()" #logfrm = ngForm>
+		<form (ngSubmit)="validate()" [formGroup]="RegistrationForm">
             <div class="row">
                 <div class="col-md-6 form-group">
                     <label>Username</label>
-                    <input type="text" name="Username" required pattern="[a-zA-Z]{3,}" #Username="ngModel" [(ngModel)]=user.userName 
-                    placeholder="Enter Your Name" class='form-control'>
+                    <input type="text" name="Username" 
+                    required minlength="3" pattern="^[a-z,.-']+$" 
+                    placeholder="Enter Your Name" class='form-control' formControlName="Username">
             
-                   <span *ngIf="Username.dirty && Username.invalid" class="alert alert-danger">
-                     Username is empty or less than 3 characters
+                   <span *ngIf="RegistrationForm.controls.Username.dirty && RegistrationForm.controls.Username.invalid" class="alert-danger" >
+                     Full Name is required
                     </span> 
                 </div>
                 <div class="col-md-6 form-group">
                     <label>Phone Number</label>
-                    <input type="text" name="phonenum"  required pattern="^[789]\d{9}$ "  #phonenum="ngModel" [(ngModel)]=user.phoneNo
-                     placeholder="Enter Your Phone_number" class='form-control'>
-                     <span *ngIf="phonenum.dirty && phonenum.invalid" class="alert alert-danger">
-                        Invalid phone number.
+                    <input type="number" name="phonenum"  required maxlength="10" pattern="[0-9]{10,10}"  
+                     
+                     placeholder="Enter Your Phone_number" class='form-control' formControlName="Phone_Number">
+                     <span *ngIf="RegistrationForm.controls.Phone_Number.dirty && RegistrationForm.controls.Phone_Number.invalid" 
+                     class="alert-danger">
+                        Enter 10 digit Number.
                     </span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 form-group">
                     <label>Password</label>
-                    <input type="password" name="Password"  required pattern="[A-Za-z0-9]{7,}" #Password="ngModel" [(ngModel)]=user.password
-                    placeholder="Enter Your Password" class='form-control'>
-                    <span *ngIf="Password.dirty && Password.invalid" class="alert alert-danger">
-                        Password is empty or invalid
+                    <input type="password" name="Password" required minlength="8" 
+                     
+                    placeholder="Enter Your Password" class='form-control' formControlName="Password">
+                    <span *ngIf="RegistrationForm.controls.Password.dirty && RegistrationForm.controls.Password.invalid" class="alert-danger">
+                        Password is required.
                     </span>
+            
                 </div>
                 <div class="col-md-6 form-group">
-                    <label>Re-Enter the Password</label>
-                    <input type="password" name="Password"  required pattern="[A-Za-z0-9]{7,}" #Password="ngModel" [(ngModel)]=user.password
-                     placeholder="Re-Enter Your Password" class='form-control'>
-                     <span *ngIf="Password.dirty && Password.invalid" class="alert alert-danger">
-                        Password is empty or invalid
-                    </span>
+                    <label>Confirm Password</label>
+                    <input type="password" name="password" required  minlength="8" 
+                     
+                     placeholder="Re-Enter Your Password" class='form-control' formControlName="password">
+                    
+                    <span *ngIf="RegistrationForm.controls.password.value !== RegistrationForm.controls.Password.value "class="alert-danger">
+                        Confirm Password should match with Password.
+                   </span>
+                  
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-6 form-group">
                     <label>E-Mail</label>
-                    <input type="email" name="EmailId" #EmailId="ngModel" [(ngModel)]=user.email
-                    placeholder="xyz@gmail.com" class='form-control'>
-                    <span *ngIf="EmailId.dirty && EmailId.invalid" class="alert alert-danger">
+                    <input type="email" name="EmailID" required
+                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                    
+                    placeholder="E-Mail" class='form-control' formControlName="EmailID">
+                    <span *ngIf="RegistrationForm.controls.EmailID.dirty && RegistrationForm.controls.EmailID.invalid" class="alert-danger"  >
+                   
+                       
                         Email-Id is empty or invalid
                     </span>
                 </div>
+
+
                 <div class="col-md-6 form-group">
                     <label>State</label>
-                    <input type="text" name="State"  [(ngModel)]=user.state  #State="ngModel" required pattern="[A-Z a-z]{3,}" 
-                    placeholder="Enter Your State" class='form-control'>
-                    <span *ngIf="State.dirty && State.invalid" class="alert alert-danger">
+                    <input type="text" name="State" required pattern="[A-Z a-z]{2,}"
+                    placeholder="Enter Your State" class='form-control' formControlName="State">
+                    <span *ngIf="RegistrationForm.controls.State.dirty && RegistrationForm.controls.State.invalid" class="alert-danger">
                         Invalid Entry
                     </span>
                 </div>
             </div>
                 <div class="col-md-6 form-group">
                     <label>City</label>
-                    <input type="text" name="City" [(ngModel)]=user.city required pattern="[A-Z a-z]{3,}" placeholder="City" class='form-control'>
+                    <input type="text" name="City"  required pattern="[A-Z a-z]{3,}" placeholder="City" class='form-control' formControlName="City">
                 </div>
             <div class="row">
                 <div class="col-md-12">
-                    <button type="submit" [disabled]=!logfrm.valid class="btn btn-success btn-block btn-submit">Submit</button>
+                    <button type="submit" class="btn btn-success btn-block btn-submit" [disabled]=!RegistrationForm.valid> Submit</button>
                 </div>
             </div>
 		</form>
 	</div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- Done for the purpose of testing addPolicy method and it's working. -->
-
-
-<!-- <td><button (click)="toggle()">Vehicle</button></td>
-
-<div *ngIf="!submit">
-    <input type="number" placeholder="Policy id" name="policyId" [(ngModel)]="policyId">
-    <button type="button" (click)="addPolicy()"></button>
-</div> -->
-    
-    <!-- Done for the purpose of testing addVehicle method and it's working. -->
-
-    <!-- 
-        <td><button (click)="toggle()">Vehicle</button></td>
-
-<div *ngIf="!submit">
-    <input type="text" placeholder="Registration No." name="resgidtrationNo" [(ngModel)]="registrationNo">
-    <button type="button" (click)="addVehicle()"></button>
-</div> -->
