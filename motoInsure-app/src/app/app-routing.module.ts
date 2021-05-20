@@ -7,6 +7,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { PolicyComponent } from './policy/policy.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { VehicleFormComponent } from './vehicle-form/vehicle-form.component';
+import { VehicleDisplayComponent } from './vehicle-display/vehicle-display.component';
 
 const routes: Routes = [
   {
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path : 'idv',
     component : DisplayIdvComponent
+  },
+  {
+    path : 'vehicleDisplay',
+    component : VehicleDisplayComponent
   }
 ];
 

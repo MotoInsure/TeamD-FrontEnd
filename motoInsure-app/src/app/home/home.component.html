@@ -1,8 +1,5 @@
 <div class="bg-img">
-    <!-- <ul>
-        <li><a>About</a></li>
-        <li><a>Contact</a></li>
-    </ul> -->
+    
     <div class="cont">
         <div style="font-size:80px">MOTOINSURE</div>
         <div style="text-align: center">
@@ -10,13 +7,13 @@
         </div>
     </div>
 </div>
-<!-- <div class="parent"> -->
+
 <mat-card class="card1">
     <mat-form-field appearance="outline">
         <mat-label>Enter Registration Number </mat-label>
         <input matInput placeholder="Registration Number" (input)="onInput($event)" formControlName="Registration">
     </mat-form-field>
-    <button mat-raised-button class="button1" *ngIf="RegistrationNumber" (click)="direct()">Proceed</button>
+    <button mat-raised-button class="button1" *ngIf="RegistrationNumber"  (click)="direct1()">Proceed</button>
     <div>
         <p>or</p>
     </div>
