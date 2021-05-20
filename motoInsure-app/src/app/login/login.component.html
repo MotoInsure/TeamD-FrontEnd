@@ -2,19 +2,26 @@
     <div class="container">
         <div class="title"> Login</div>
     <form (ngSubmit)="loginUser()" [hidden]=!disappear #authfrm=ngForm>
-        <table>
-            <tr>
+        <table class="table-light">
+            <tr class="table-light">
                 <td>Email </td>
-                <td><input type="email" name="userName" required  #Username="ngModel" [(ngModel)]=login.email class='form-control'>
-                    <span *ngIf="Username.dirty && Username.invalid" class="alert alert-danger">
-                        Username is empty or invalid
-                       </span> </td>
+                <td><input type="email" name="email" 
+                    [required]="Email.value == 'email' || Email.value !== ''"
+                     [email]="login.email!==''"  #Email="ngModel" 
+                     [(ngModel)]=login.email class='form-control'>
+                    <span *ngIf="Email.errors?.email && Email.invalid" class="help-block">
+                        Email is invalid
+                    </span>
+                    <span *ngIf="Email.errors?.required && Email.touched" class="help-block">
+                        Email is required
+                    </span>
+                </td>
             </tr>
             <tr>
                 <td>Password</td>
                 <td><input type="password" name="password" required #Password="ngModel" [(ngModel)]=login.password class='form-control'>
                     <span *ngIf="Password.dirty && Password.invalid" class="alert alert-danger">
-                        Password is empty or invalid
+                        Password is required.
                     </span></td>
             </tr>
             <tr>
@@ -27,7 +34,7 @@
         </table>
     </form>
     <form [hidden]=pwd (ngSubmit)="forgotPwd()">
-        <table>
+        <table class="table">
             <tr>
                 <td>UserName</td>
                 <td><input type="userName" name="userName" [(ngModel)]=userName>
