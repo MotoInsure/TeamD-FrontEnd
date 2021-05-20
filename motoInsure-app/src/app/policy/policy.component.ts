@@ -18,13 +18,17 @@ export class PolicyComponent implements OnInit {
   expiryDate1 : string;
   expiryDate3 : string;
   expiryDate5 : string;
+  registrationNo: string;
 
   newPurchasedDate : Date;
   newExpiryDate : Date;
 
   policyObj : Policy = new Policy();
 
-  constructor(private policyService : PolicyService, private router:Router) { }
+  constructor(private policyService : PolicyService, private router:Router) { 
+    this.registrationNo = JSON.parse(localStorage.getItem("registrationNo"));
+    console.log(this.registrationNo);
+  }
 
   ngOnInit(): void {
     this.getPolicyAmount();
@@ -33,22 +37,23 @@ export class PolicyComponent implements OnInit {
     this.expiryDate1 = new Date(new Date().getFullYear()+1, new Date().getMonth(), new Date().getDate()).toDateString();
     this.expiryDate3 = new Date(new Date().getFullYear()+3, new Date().getMonth(), new Date().getDate()).toDateString();
     this.expiryDate5 = new Date(new Date().getFullYear()+5, new Date().getMonth(), new Date().getDate()).toDateString();
+    
   }
 
   getPolicyAmount(){
-    this.policyService.getPolicyAmount("APS5J4314","Thirdparty").subscribe(
+    this.policyService.getPolicyAmount(this.registrationNo,"Thirdparty").subscribe(
       policyAmount => this.successMessage = policyAmount,
       error => this.thirdpartyPolicyAmount = error.error.text.split(":")[1]);     
   }
 
   getComprehensivePolicyAmount(){
-    this.policyService.getPolicyAmount("APS5J4314","Comprehensive").subscribe(
+    this.policyService.getPolicyAmount(this.registrationNo,"Comprehensive").subscribe(
       policyAmount => this.successMessage = policyAmount,
       error => this.comprehensivePolicyAmount = error.error.text.split(":")[1]);     
   } 
 
   getMaxClaimAmount(){
-    this.policyService.getMaxClaimAmount("AP07DT0617").subscribe(
+    this.policyService.getMaxClaimAmount(this.registrationNo).subscribe(
       maxClaimAmount => this.successMessage = maxClaimAmount,
       error => this.maxClaimAmount = error.error.text.split(":")[1]
     );

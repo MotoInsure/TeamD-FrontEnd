@@ -13,12 +13,11 @@ export interface Transaction {
   selector: 'app-vehicle-form',
   templateUrl: './vehicle-form.component.html',
   styleUrls: ['./vehicle-form.component.css'],
-  // selector: 'table-footer-row-example',
-  // styleUrls: ['table-footer-row-example.css'],
-  // templateUrl: 'table-footer-row-example.html',
+  
 })
+
 export class VehicleFormComponent implements OnInit {
-  // [x: string]: any;
+  AllValues;
   vehicleForm:FormGroup;
   isOver=false;
   userForm:FormGroup;
@@ -28,11 +27,10 @@ export class VehicleFormComponent implements OnInit {
 
   ELEMENT_DATA: Transaction[] =  [
     {specification: 'Vehicle Type', values: ''},
-    {specification: 'RTO', values: ''},
     {specification: 'Brand', values: ''},
     {specification: 'Model', values: ''},
-    {specification: 'Fuel Type', values: ''},
     {specification: 'Variant', values: ''},
+    {specification: 'Fuel Type', values: ''},
     {specification: 'Purchasing Year ', values: ''},
     {specification: 'Price', values: ''},
   ];
@@ -40,20 +38,16 @@ export class VehicleFormComponent implements OnInit {
   dataSource = this.ELEMENT_DATA;
   
   
-    // transactions: Transaction[] = [
-    //   {item: 'Beach ball', cost: 4},
-    //   {item: 'Towel', cost: 5},
-    //   {item: 'Frisbee', cost: 2},
-    //   {item: 'Sunscreen', cost: 4},
-    //   {item: 'Cooler', cost: 25},
-    //   {item: 'Swim suit', cost: 15},
-    // ];
-    // getTotalCost() {
-    //   return this.transactions.map(t => t.cost).reduce((acc, value) => acc + value, 0);
-    // }
+    
   vehicles: any = [
     { key: "Two Wheeler", value: "Two Wheeler" },
     { key: "Four Wheeler", value: "Four Wheeler" }
+  ]
+
+  fuelTypes : any = [
+    { key :"Diesal", value:"Diesal" },
+    { key :"Petrol", value:"Petrol" },
+    { key :"CNG", value:"CNG" }
   ]
   
   
@@ -61,11 +55,10 @@ export class VehicleFormComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router) { 
     this.vehicleForm=this.fb.group({
       VehicleType:'',
-      RTO:'',
       Brand:'',
       Model:'',
-      FuelType:'',
       Variant:'',
+      FuelType:'',
       PurchasingYear:'',
       Price:''
     })
@@ -78,17 +71,20 @@ export class VehicleFormComponent implements OnInit {
   ngOnInit(): void {
     this.isOver=true;
   }
+  onInput(event){
+    this.AllValues=event.target.value;
+  }
   next() {
     this.isNext=true;
     this.isOver=false;
     this.ELEMENT_DATA[0].values = this.vehicleForm.value.VehicleType;
-    this.ELEMENT_DATA[1].values = this.vehicleForm.value.RTO;
-    this.ELEMENT_DATA[2].values = this.vehicleForm.value.Brand;
-    this.ELEMENT_DATA[3].values = this.vehicleForm.value.Model;
+    // this.ELEMENT_DATA[1].values = this.vehicleForm.value.RTO;
+    this.ELEMENT_DATA[1].values = this.vehicleForm.value.Brand;
+    this.ELEMENT_DATA[2].values = this.vehicleForm.value.Model;
+    this.ELEMENT_DATA[3].values = this.vehicleForm.value.Variant;
     this.ELEMENT_DATA[4].values = this.vehicleForm.value.FuelType;
-    this.ELEMENT_DATA[5].values = this.vehicleForm.value.Variant;
-    this.ELEMENT_DATA[6].values = this.vehicleForm.value.PurchasingYear;
-    this.ELEMENT_DATA[7].values = this.vehicleForm.value.Price;
+    this.ELEMENT_DATA[5].values = this.vehicleForm.value.PurchasingYear;
+    this.ELEMENT_DATA[6].values = this.vehicleForm.value.Price;
 
 
     console.log('vehicleForm', this.vehicleForm.value);

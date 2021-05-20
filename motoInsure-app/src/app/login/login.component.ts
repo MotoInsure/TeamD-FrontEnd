@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { Login } from '../login.model';
 import { UserService } from '../services/user.service';
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   registrationNo : string;
   disappear : boolean = this.loggedIn || this.pwd;
 
-  constructor(private service:UserService) { 
+  constructor(private service:UserService, private router: Router) { 
     this.login = new Login();
   }
 
@@ -64,7 +65,11 @@ export class LoginComponent implements OnInit {
   addVehicle(){
     let user : User;
     user = JSON.parse(localStorage.getItem("user"));
+    localStorage.setItem("registrationNo",JSON.stringify(this.registrationNo));
     this.service.addVehicle(this.registrationNo, user);
+    this.router.navigate(["policy"]);
   }
+
+
 
 }
