@@ -9,7 +9,8 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  RegistrationNumber
+  RegistrationNumber : string;
+  vehicleObj : Vehicle;
   constructor(private router: Router, private userService : UserService) { }
 
   ngOnInit(): void {
@@ -19,13 +20,14 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['vehicle']);
   }
 
-  direct1() {
-    let vehicleObj : Vehicle;
+  direct1() {    
     this.userService.getPriceOfVehicle(this.RegistrationNumber).then(
       (result:Vehicle)=>{
-        vehicleObj=result;
-        if(vehicleObj!=null) {
-          localStorage.setItem('current vehicle',JSON.stringify(vehicleObj));
+        this.vehicleObj=result;
+        console.log(this.vehicleObj);
+        
+        if(this.vehicleObj!=null) {
+          localStorage.setItem('current vehicle',JSON.stringify(this.vehicleObj));
           this.router.navigate(['vehicleDisplay']);
         }
         else

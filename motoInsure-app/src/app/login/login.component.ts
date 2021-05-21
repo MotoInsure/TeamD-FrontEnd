@@ -5,6 +5,7 @@ import { Login } from '../login.model';
 import { UserService } from '../services/user.service';
 import { User } from '../user.model';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   pwd : boolean= true;
   loggedIn : boolean =false; 
   userName : string;
+  email : string;
   registrationNo : string;
   disappear : boolean = this.loggedIn || this.pwd;
 
