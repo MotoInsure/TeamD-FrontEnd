@@ -18,16 +18,17 @@ export class VehicleDisplayComponent implements OnInit {
   purchasingYear = this.vehicle.purchasingYear;
   price = this.vehicle.price;
   
-  
+
 
   constructor(private userService : UserService, private router : Router) { }
 
   ngOnInit(): void {
   }
   
-    
+  
+
   showIDV() {
-    this.router.navigate(['idv']);
+    this.router.navigate(['idv1']);
   }
 
 }
