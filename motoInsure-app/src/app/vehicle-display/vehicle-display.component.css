@@ -1,0 +1,19 @@
+
+.bg{ 
+    background: linear-gradient(135deg,#e6a671,#5f59b6); 
+    height: 100vh; 
+    align-items: center;
+} 
+button.btn1:hover, button.btn1:active {
+    font-size: 110%;
+    color: rgb(44, 29, 29);
+    right: 25px;
+    align-items: center;
+}
+.card{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    width: 90%;
+}

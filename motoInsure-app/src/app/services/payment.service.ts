@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Policy } from '../policy.model';
+import { User } from '../user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class PaymentService {
 
   constructor(private http : HttpClient) { }
 
-  insertPolicy(policy : Policy) : Observable<any> {
-    return this.http.post(this.baseUri+"/addPolicy", policy);
+  insertPolicy(policy : Policy, user:User) : Observable<any> {
+    return this.http.post(this.baseUri+"/addPolicy/"+user.id, policy);
   }
 }
