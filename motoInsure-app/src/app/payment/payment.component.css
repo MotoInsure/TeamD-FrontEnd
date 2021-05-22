@@ -6,11 +6,16 @@ margin: 0;
 font-family: 'poppins',sans-serif;
  } 
 .bg{ 
- background: linear-gradient(135deg,#e6a671,#5f59b6); 
+ background: url(../../assets/image/x.jpg); 
     height: 100vh; 
     align-items: center;
  } 
- 
+ .navbar-text{
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+}
 .padding {
     padding: 1.5rem !important;
     margin-left: 400px

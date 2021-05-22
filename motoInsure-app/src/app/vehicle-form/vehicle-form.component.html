@@ -1,6 +1,27 @@
 <!-- <img src="../../assets/image/HOMEPIC.jpg" width="100%" height="625px" style="text-align: center;position: fixed; margin-left: -7px;"  > -->
 <div class="bg">
-
+  <nav class="navbar navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MOTOINSURE</a>
+      <span class="navbar-text" style="font-style: italic; text-align: center;">
+        Let's Find You The Best!
+      </span>
+      <div class="dropdown">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <button class="dropbtn">Move To 
+          <i class="fa fa-caret-down"></i>
+        </button> -->
+        <div class="dropdown-content">
+          <a href="#">Home </a>
+          <a href="#">Login </a>
+          <a href="#">Register </a>
+        </div>
+      </div> 
+    </div>
+  </nav>
   <mat-card class="card" >
   <form [formGroup]="vehicleForm" *ngIf="isOver">    
     

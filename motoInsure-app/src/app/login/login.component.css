@@ -6,11 +6,17 @@ margin: 0;
 font-family: 'poppins',sans-serif;
  } 
 .bg{ 
- background: linear-gradient(135deg,#e6a671,#5f59b6); 
+ background: url(../../assets/image/x.jpg); 
     display: flex; 
     height: 100vh; 
     align-items: center;
  }   
+ .navbar-text{
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+}
  .container {
       margin: 50px auto;
       height: 250px;
@@ -73,7 +79,7 @@ font-family: 'poppins',sans-serif;
       font-weight: bold;
       color:rgb(180, 76, 6);
       text-shadow: 0 1px #e3f1f1;
-      background: #f0c2ac;
+      /* background: #f0c2ac; */
       border: 1px solid;
       border-color: #ca510b #ca510b  #ca510b;
       border-radius: 18px;

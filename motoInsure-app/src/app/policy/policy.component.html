@@ -1,5 +1,16 @@
 <div class="bg">
-  
+  <nav class="navbar navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">MOTOINSURE</a>
+      <span class="navbar-text" style="font-style: italic; text-align: center;">
+        Let's Find You The Best!
+      </span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
 <div class = "container" >
   <br>
   <div class = "row" style ="height: 10%">
@@ -23,7 +34,7 @@
                 <p class="card-text">Policy Amount : {{thirdpartyPolicyAmount|currency:'INR':'symbol'}}</p><br>
                 <p class="card-text">Max Claim Amount : {{maxClaimAmount|currency:'INR':'symbol'}}</p><br>
                 <p class="card-text">Expiry Date : {{expiryDate1|date:"mediumDate"}}</p><br>
-                <button type="button" class="btn btn-success btn1" (click)="navigate(1)">BUY</button>
+                <button type="button" class="btn btn-secondary btn1" (click)="navigate(1)">BUY</button>
               </div>
             </div>
       </div>
@@ -36,7 +47,7 @@
                 <p class="card-text">Policy Amount : {{thirdpartyPolicyAmount*3 *0.9|currency:'INR':'symbol'}}</p><br>
                 <p class="card-text">Max Claim Amount : {{maxClaimAmount|currency:'INR':'symbol'}}</p><br>
                 <p class="card-text">Expiry Date : {{expiryDate3|date:"mediumDate"}}</p><br>
-                <button type="button" class="btn btn-success btn2" (click)="navigate(2)">BUY</button>
+                <button type="button" class="btn btn-secondary btn2" (click)="navigate(2)">BUY</button>
               </div>
             </div>
       </div>
@@ -49,7 +60,7 @@
                 <p class="card-text">Policy Amount : {{thirdpartyPolicyAmount*5*0.75|currency:'INR':'symbol'}}</p><br>
                 <p class="card-text">Max Claim Amount :{{maxClaimAmount|currency:'INR':'symbol'}}</p><br>
                 <p class="card-text">Expiry Date : {{expiryDate5|date:"mediumDate"}}</p><br>
-                <button type="button" class="btn btn-success btn3" (click)="navigate(3)">BUY</button>
+                <button type="button" class="btn btn-secondary btn3" (click)="navigate(3)">BUY</button>
               </div>
             </div>
       </div>
@@ -78,7 +89,7 @@
                 <p class="card-text">Policy Amount : {{comprehensivePolicyAmount|currency:'INR':'symbol'}}</p><br>
                 <p class="card-text">Max Claim Amount : {{maxClaimAmount|currency:'INR':'symbol'}}</p><br>
                 <p class="card-text">Expiry Date :{{expiryDate1|date:"mediumDate"}}</p><br>
-                <button type="button" class="btn btn-success btn4" (click)="navigate(4)">BUY</button>
+                <button type="button" class="btn btn-secondary btn4" (click)="navigate(4)">BUY</button>
               </div>
             </div>
       </div>
@@ -91,7 +102,7 @@
                 <p class="card-text">Policy Amount : {{comprehensivePolicyAmount*3*0.9|currency:'INR':'symbol'}}</p><br>
                 <p class="card-text">Max Claim Amount : {{maxClaimAmount|currency:'INR':'symbol'}}</p><br>
                 <p class="card-text">Expiry Date : {{expiryDate3|date:"mediumDate"}}</p><br>
-                <button type="button" class="btn btn-success btn5" (click)="navigate(5)">BUY</button>
+                <button type="button" class="btn btn-secondary btn5" (click)="navigate(5)">BUY</button>
               </div>
             </div>
       </div>
@@ -104,7 +115,7 @@
                 <p class="card-text">Policy Amount : {{comprehensivePolicyAmount*5*0.75|currency:'INR':'symbol'}}</p><br>
                 <p class="card-text">Max Claim Amount : {{maxClaimAmount|currency:'INR':'symbol'}}</p><br>
                 <p class="card-text">Expiry Date : {{expiryDate5|date:"mediumDate"}}</p><br>
-                <button type="button" class="btn btn-success btn6"(click)="navigate(6)">BUY</button>
+                <button type="button" class="btn btn-secondary btn6"(click)="navigate(6)">BUY</button>
               </div>
             </div>
       </div>
