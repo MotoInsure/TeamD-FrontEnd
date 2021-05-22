@@ -1,7 +1,7 @@
 <div class="bg">
     <div class="container">
-        <div class="title"> Login</div>
-    <form (ngSubmit)="loginUser()" [hidden]=!disappear #authfrm=ngForm>
+        <div [hidden]=!disappear class="title"> Login</div>
+    <form (ngSubmit)="loginUser()" #authfrm=ngForm>
         <table class="table-light">
             <tr class="table-light">
                 <td>Email </td>
@@ -41,7 +41,7 @@
                     </td>
             </tr>
             <tr>
-                <td><button type="submit" >Forgot Pasword</button></td>
+                <td><button type="submit" >Forgot Password</button></td>
                 <td><button type="button" (click)="toggle()">Login</button></td>
             </tr>
         </table>
