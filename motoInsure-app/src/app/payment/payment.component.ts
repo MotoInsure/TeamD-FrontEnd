@@ -14,6 +14,7 @@ import { User } from '../user.model';
 export class PaymentComponent implements OnInit {
 
   isPaid : boolean =false;
+  isRequested : boolean = false;
   paymentForm : FormGroup;
   policy : Policy;
   savedPolicyId : number;
@@ -56,6 +57,7 @@ export class PaymentComponent implements OnInit {
       }
 
     );
+    this.isRequested = true;
     
     
   }
