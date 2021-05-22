@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
+import { User } from '../user.model';
 //import { RegistrationModel } from 'src/registration.model';
 
 @Component({
@@ -10,7 +13,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 
 export class RegistrationComponent  {
 //auth : RegistrationModel;
-RegistrationForm = new FormGroup({
+user:User;
+RegistrationForm = new FormGroup({  
   Username: new FormControl(''),
   Phone_Number: new FormControl(''),
   EmailID: new FormControl(''),
@@ -19,11 +23,17 @@ RegistrationForm = new FormGroup({
   State: new FormControl(''),
   City: new FormControl(''),
 });
-  constructor() {
+
+constructor(private service: UserService, private router:Router) {
+  this.user = new User();
+ }
+   onSubmit(){
+    //this.user= this.RegistrationForm;
+    this.service.addUser(this.user);
+    this.router.navigate(['login']);
+    console.log(this.user.userName);
     
-     //this.auth = new RegistrationModel();
-   }
-  
+  }
   
   // ngOnInit(): void {
     

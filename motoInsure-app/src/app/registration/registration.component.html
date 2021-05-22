@@ -7,7 +7,7 @@
                     <label>Username</label>
                     <input type="text" name="Username" 
                     required minlength="3" pattern="^[a-z,.-']+$" 
-                    placeholder="Enter Your Name" class='form-control' formControlName="Username">
+                    placeholder="Enter Your Name" class='form-control' [(ngModel)]=user.userName formControlName="Username">
             
                    <span *ngIf="RegistrationForm.controls.Username.dirty && RegistrationForm.controls.Username.invalid" class="alert-danger" >
                      Full Name is required
@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-md-6 form-group">
                     <label>Phone Number</label>
-                    <input type="number" name="phonenum"  required maxlength="10" pattern="[0-9]{10,10}"  
+                    <input type="number" name="phonenum" [(ngModel)]=user.phoneNo  required maxlength="10" pattern="[0-9]{10,10}"  
                      
                      placeholder="Enter Your Phone_number" class='form-control' formControlName="Phone_Number">
                      <span *ngIf="RegistrationForm.controls.Phone_Number.dirty && RegistrationForm.controls.Phone_Number.invalid" 
@@ -27,7 +27,7 @@
             <div class="row">
                 <div class="col-md-6 form-group">
                     <label>Password</label>
-                    <input type="password" name="Password" required minlength="8" 
+                    <input type="password" name="Password" [(ngModel)]=user.password required minlength="8" 
                      
                     placeholder="Enter Your Password" class='form-control' formControlName="Password">
                     <span *ngIf="RegistrationForm.controls.Password.dirty && RegistrationForm.controls.Password.invalid" class="alert-danger">
@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-md-6 form-group">
                     <label>E-Mail</label>
-                    <input type="email" name="EmailID" required
+                    <input type="email" name="EmailID" [(ngModel)]=user.email required
                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
                     
                     placeholder="E-Mail" class='form-control' formControlName="EmailID">
@@ -65,7 +65,7 @@
                 <div class="col-md-6 form-group">
                     <label>State</label>
                     <input type="text" name="State" required pattern="[A-Z a-z]{2,}"
-                    placeholder="Enter Your State" class='form-control' formControlName="State">
+                    placeholder="Enter Your State" [(ngModel)]=user.state class='form-control' formControlName="State">
                     <span *ngIf="RegistrationForm.controls.State.dirty && RegistrationForm.controls.State.invalid" class="alert-danger">
                         Invalid Entry
                     </span>
@@ -73,7 +73,7 @@
             </div>
                 <div class="col-md-6 form-group">
                     <label>City</label>
-                    <input type="text" name="City"  required pattern="[A-Z a-z]{3,}" placeholder="City" class='form-control' formControlName="City">
+                    <input type="text" name="City" [(ngModel)]=user.city  required pattern="[A-Z a-z]{3,}" placeholder="City" class='form-control' formControlName="City">
                 </div>
             <div class="row">
                 <div class="col-md-12">
