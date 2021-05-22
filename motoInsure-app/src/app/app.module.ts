@@ -23,7 +23,9 @@ import { VehicleFormComponent } from './vehicle-form/vehicle-form.component';
 import { MatTableModule } from '@angular/material/table';
 import { DisplayIdvComponent } from './display-idv/display-idv.component';
 import { VehicleDisplayComponent } from './vehicle-display/vehicle-display.component';
-import { MessageService } from './services/message.service';
+
+import { DisplayIdv1Component } from './display-idv1/display-idv1.component';
+
 
 @NgModule({
   declarations: [ 
@@ -36,6 +38,7 @@ import { MessageService } from './services/message.service';
     VehicleFormComponent,
     DisplayIdvComponent,
     VehicleDisplayComponent,
+    DisplayIdv1Component,
   ],
   imports: [
     BrowserModule,

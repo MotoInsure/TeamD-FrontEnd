@@ -3,34 +3,31 @@ import { Router } from '@angular/router';
 import { Vehicle } from '../Vehicle.model';
 
 @Component({
-  selector: 'app-display-idv',
-  templateUrl: './display-idv.component.html',
-  styleUrls: ['./display-idv.component.css']
+  selector: 'app-display-idv1',
+  templateUrl: './display-idv1.component.html',
+  styleUrls: ['./display-idv1.component.css']
 })
-export class DisplayIdvComponent implements OnInit {
+export class DisplayIdv1Component implements OnInit {
 
-  idv : number;
+  idv: number;
   vehicleObj : Vehicle;
   depreciatedValue : number;
 
-  constructor(private router: Router) { } 
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.calIDV();
   }
 
   calIDV(){
-    this.vehicleObj = JSON. parse(localStorage. getItem('newVehicleObj'));
-    
+    this.vehicleObj = JSON. parse(localStorage. getItem('current vehicle'));
+
     this.depreciatedValue = this.vehicleObj.price*0.05;
     this.idv = this.vehicleObj.price - (this.depreciatedValue*(new Date().getFullYear()-this.vehicleObj.purchasingYear))
-    // this.idv = Math.abs(this.idv);
-
-    
+    this.idv = Math.abs(this.idv);
 
     console.log(this.idv);
-  }
-
+}
   navigateLogin(){
     this.router.navigate(['login']);
   }
