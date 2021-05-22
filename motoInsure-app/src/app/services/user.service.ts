@@ -17,8 +17,12 @@ export class UserService {
 
   constructor(private http:HttpClient, private router:Router) { }
 
-  addUser(user :User){
-    this.http.post(this.baseUri+"addUser",user).subscribe(data => data=user);
+  async addUser(user :User){
+    return await this.http.post(this.baseUri+"addUser",user)
+    .pipe(
+      retry(1),
+      catchError(this.handleError2)
+    ).toPromise();
   }
   async validateLogin(email : string, password: string){    
     return await this.http.get<User>(this.baseUri+"auth?email="+email+"&password="+password)
@@ -69,6 +73,20 @@ export class UserService {
       // server-side error
      // errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
       errorMessage = `Invalid Credentials.`
+    }
+    window.alert(errorMessage);
+    return throwError(errorMessage);
+  }
+  handleError2(error) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // client-side error
+      errorMessage = `Error: ${error.error.message}`;
+      //errorMessage = `Invalid Credentials.`
+    } else {
+      // server-side error
+     // errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      errorMessage = `User exists.`
     }
     window.alert(errorMessage);
     return throwError(errorMessage);
