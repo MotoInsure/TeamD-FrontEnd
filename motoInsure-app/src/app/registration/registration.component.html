@@ -7,7 +7,7 @@
                     <label>Username</label>
                     <input type="text" name="Username" [(ngModel)]=user.userName
                     required minlength="3" pattern="^[a-z,.-']+$" 
-                    placeholder="Enter Your Name" class='form-control' formControlName="Username">
+                    placeholder="Enter Your Name" class='form-control' [(ngModel)]=user.userName formControlName="Username">
             
                    <span *ngIf="RegistrationForm.controls.Username.dirty && RegistrationForm.controls.Username.invalid" class="alert-danger" >
                      Full Name is required
@@ -50,7 +50,11 @@
             <div class="row">
                 <div class="col-md-6 form-group">
                     <label>E-Mail</label>
+<<<<<<< HEAD
+                    <input type="email" name="EmailID" [(ngModel)]=user.email required
+=======
                     <input type="email" name="EmailID" required [(ngModel)]=user.email
+>>>>>>> 729a274d6638a81e0d0f28857a70d02becb7c338
                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
                     
                     placeholder="E-Mail" class='form-control' formControlName="EmailID">
@@ -64,8 +68,13 @@
 
                 <div class="col-md-6 form-group">
                     <label>State</label>
+<<<<<<< HEAD
+                    <input type="text" name="State" required pattern="[A-Z a-z]{2,}"
+                    placeholder="Enter Your State" [(ngModel)]=user.state class='form-control' formControlName="State">
+=======
                     <input type="text" name="State" required pattern="[A-Z a-z]{2,}" [(ngModel)]=user.state
                     placeholder="Enter Your State" class='form-control' formControlName="State">
+>>>>>>> 729a274d6638a81e0d0f28857a70d02becb7c338
                     <span *ngIf="RegistrationForm.controls.State.dirty && RegistrationForm.controls.State.invalid" class="alert-danger">
                         Invalid Entry
                     </span>
@@ -73,7 +82,11 @@
             </div>
                 <div class="col-md-6 form-group">
                     <label>City</label>
+<<<<<<< HEAD
+                    <input type="text" name="City" [(ngModel)]=user.city  required pattern="[A-Z a-z]{3,}" placeholder="City" class='form-control' formControlName="City">
+=======
                     <input type="text" name="City" [(ngModel)]=user.city required pattern="[A-Z a-z]{3,}" placeholder="City" class='form-control' formControlName="City">
+>>>>>>> 729a274d6638a81e0d0f28857a70d02becb7c338
                 </div>
             <div class="row">
                 <div class="col-md-12">
