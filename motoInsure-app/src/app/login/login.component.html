@@ -13,9 +13,11 @@
 <div class="bg">
    
     <div class="container">
+
         <div [hidden]=!disappear class="title"> Login</div>
     <form (ngSubmit)="loginUser()" #authfrm=ngForm>
         <table class="table-light">
+
             <tr class="table-light">
                 <td>Email </td>
                 <td><input type="email" name="email" 

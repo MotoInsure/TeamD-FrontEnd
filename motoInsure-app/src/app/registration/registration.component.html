@@ -25,13 +25,14 @@
 	<div class="container">
 		<div class="title"> Register Here </div>
 		<form (ngSubmit)="validate()" [formGroup]="RegistrationForm">
+            <span [hidden]=!sameUser class="alert-danger" >User Exists</span>
             <div class="row">
                 <div class="col-md-6 form-group">
                     <label>Username</label>
                     <input type="text" name="Username" [(ngModel)]=user.userName
                     required minlength="3" pattern="^[a-z,.-']+$" 
-                    placeholder="Enter Your Name" class='form-control' formControlName="Username">
-            
+                    placeholder="Enter Your Name" class='form-control' [(ngModel)]=user.userName formControlName="Username">
+                    
                    <span *ngIf="RegistrationForm.controls.Username.dirty && RegistrationForm.controls.Username.invalid" class="alert-danger" >
                      Full Name is required
                     </span> 
