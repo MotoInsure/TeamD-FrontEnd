@@ -21,6 +21,7 @@ export class RegistrationComponent  {
   submit : boolean =false;
   otp:string;
   isValid:boolean=false;
+  isCollapsed:boolean=true
   userOtp:string;
   disappear : boolean = false;
   RegistrationForm = new FormGroup({
@@ -62,7 +63,9 @@ export class RegistrationComponent  {
       console.log("Entered: "+this.userOtp);
       if(temp===this.userOtp){
         this.isValid=true;
-        alert("User verified");        
+        alert("User verified");  
+        localStorage.removeItem('otp');
+        this.verify=true;      
       }
       else{
         this.isValid=false;
@@ -75,7 +78,7 @@ export class RegistrationComponent  {
       localStorage.setItem('otp',this.otp);
       console.log("Generated: "+this.otp);     
       this.sms.message="OTP "+this.otp;
-      this.sms.to="+917065328870";
+      this.sms.to="+91"+this.user.phoneNo;
       this.msgservice.sendSms(this.sms);
     }
     toggle(){
