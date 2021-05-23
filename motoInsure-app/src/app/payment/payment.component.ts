@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Policy } from '../policy.model';
 import { PolicyComponent } from '../policy/policy.component';
 import { PaymentService } from '../services/payment.service';
+import { UserService } from '../services/user.service';
 import { User } from '../user.model';
 
 @Component({
@@ -13,11 +14,12 @@ import { User } from '../user.model';
 export class PaymentComponent implements OnInit {
 
   isPaid : boolean =false;
+  isRequested : boolean = false;
   paymentForm : FormGroup;
   policy : Policy;
   savedPolicyId : number;
 
-  constructor(private formBuilder: FormBuilder, private paymentService: PaymentService) {
+  constructor(private formBuilder: FormBuilder,private service:UserService, private paymentService: PaymentService) {
 
    }
 
@@ -43,5 +45,20 @@ export class PaymentComponent implements OnInit {
 
     );
     this.isPaid = true;
+  }
+  getPolicyDetails(){
+    let user : User;
+    let policy : Policy;
+    user = JSON.parse(localStorage.getItem("user"));
+    this.service.getPolicyByUserid(user.id).then(
+      (result:Policy)=>{
+        policy = result;
+        console.log(policy);
+      }
+
+    );
+    this.isRequested = true;
+    
+    
   }
 }

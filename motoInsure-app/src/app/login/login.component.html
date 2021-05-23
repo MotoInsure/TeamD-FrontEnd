@@ -1,8 +1,31 @@
+<nav class="navbar navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">M O T O I N S U R E</a>
+      <span class="navbar-text" style="font-style: italic; text-align: center;">
+        Let's Find You The Best!
+      </span>
+      <div class="dropdown">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="dropdown-content">
+          <a href="#">Home </a>
+          <!-- <a href="#">Login </a> -->
+          <a href="#">Register </a>
+        </div>
+      </div> 
+    </div>
+  </nav>
 <div class="bg">
+   
     <div class="container">
-        <div class="title"> Login</div>
-    <form (ngSubmit)="loginUser()" [hidden]=!disappear #authfrm=ngForm>
+
+        <div [hidden]=!disappear class="title"> Login</div>
+    <form (ngSubmit)="loginUser()" #authfrm=ngForm>
         <table class="table-light">
+
             <tr class="table-light">
                 <td>Email </td>
                 <td><input type="email" name="email" 
@@ -41,7 +64,7 @@
                     </td>
             </tr>
             <tr>
-                <td><button type="submit" >Forgot Pasword</button></td>
+                <td><button type="submit" >Forgot Password</button></td>
                 <td><button type="button" (click)="toggle()">Login</button></td>
             </tr>
         </table>
