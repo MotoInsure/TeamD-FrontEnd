@@ -1,19 +1,50 @@
 <div class="bg">
+    <nav class="navbar navbar-dark bg-dark">
+        <!-- Navbar content -->
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">M O T O I N S U R E</a>
+          <span class="navbar-text" style="font-style: italic; text-align: center;">
+            Let's Find You The Best!
+          </span>
+          <div class="dropdown">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- <button class="dropbtn">Move To 
+              <i class="fa fa-caret-down"></i>
+            </button> -->
+            <div class="dropdown-content">
+              <a href="#">Home </a>
+              <a href="#">Login </a>
+              <a href="#">Register </a>
+            </div>
+          </div> 
+          
+        </div>
+      </nav>
     <div class="container">
-        <div class="row" style="padding-top: 19%; padding-left :32%">
+        <div class="row" style="padding-top: 14%; padding-left :32%">
             <div class="card">
                 <div class="card-header">Insure Declared Value</div>
-                <div class="card-body">MotoInsure can provide: {{idv|currency:'INR':'symbol'}}  as Insurance for your vehicle </div>
+                <div class="card-body">
+                    <div *ngIf="!errorMessage">
+                        MotoInsure can provide: {{idv|currency:'INR':'symbol'}}  as Insurance for your vehicle 
+              
+                    </div>
+                    <div *ngIf="errorMessage">
+                        Sorry, your vehicle is too old. We cannot provide you Insurance.
+                    </div>
+                </div>
                 <div class="card-footer">
                     <div class='row'>
                         <div class="col-md-4">
-                            <button class="btn btn-secondary" (click)="navigateRegistration()">Register</button>
+                            <button class="btn btn-secondary" (click)="navigateRegistration()" [disabled]="errorMessage">Register</button>
                         </div>
                         <div class="col-md-4">
                             
                         </div>
                         <div class="col-md-4">
-                            <button class="btn btn-secondary" (click)="navigateLogin()">Login</button></div>
+                            <button class="btn btn-secondary" (click)="navigateLogin()" [disabled]="errorMessage">Login</button></div>
                     </div>
                     
                     

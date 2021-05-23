@@ -1,3 +1,26 @@
+<nav class="navbar navbar-dark bg-dark">
+    <!-- Navbar content -->
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">M O T O I N S U R E</a>
+      <span class="navbar-text" style="font-style: italic; text-align: center;">
+        Let's Find You The Best!
+      </span>
+      <div class="dropdown">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <button class="dropbtn">Move To 
+          <i class="fa fa-caret-down"></i>
+        </button> -->
+        <div class="dropdown-content">
+          <a href="#">Home </a>
+          <a href="#">Profile </a>
+          <a href="#">Logout </a>
+        </div>
+      </div> 
+      
+    </div>
+  </nav>
 <div class="bg">
 	<div class="container">
 		<div class="title"> Register Here </div>
@@ -78,7 +101,7 @@
                 </div>
             <div class="row">
                 <div class="col-md-12">
-                    <button type="submit" (click)="onSubmit()" class="btn btn-success btn-block btn-submit" [disabled]=!RegistrationForm.valid> Submit</button>
+                    <button type="submit" (click)="onSubmit()" class="btn btn-secondary btn-block btn-submit" [disabled]=!RegistrationForm.valid> Submit</button>
                 </div>
             </div>
 		</form>
