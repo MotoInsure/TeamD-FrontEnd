@@ -23,6 +23,8 @@ export class PolicyComponent implements OnInit {
   newPurchasedDate : Date;
   newExpiryDate : Date;
 
+  user = JSON.parse(localStorage.getItem("user"));
+
   policyObj : Policy = new Policy();
 
   constructor(private policyService : PolicyService, private router:Router) { 
