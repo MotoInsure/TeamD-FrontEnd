@@ -3,17 +3,25 @@
         <div class="row" style="padding-top: 19%; padding-left :32%">
             <div class="card">
                 <div class="card-header">Insure Declared Value</div>
-                <div class="card-body">MotoInsure can provide: {{idv|currency:'INR':'symbol'}}  as Insurance for your vehicle </div>
+                <div class="card-body">
+                    <div *ngIf="!errorMessage">
+                        MotoInsure can provide: {{idv|currency:'INR':'symbol'}}  as Insurance for your vehicle 
+              
+                    </div>
+                    <div *ngIf="errorMessage">
+                        Sorry, your vehicle is too old. We cannot provide you Insurance.
+                    </div>
+                </div>
                 <div class="card-footer">
                     <div class='row'>
                         <div class="col-md-4">
-                            <button class="btn btn-secondary" (click)="navigateRegistration()">Register</button>
+                            <button class="btn btn-secondary" (click)="navigateRegistration()" [disabled]="errorMessage">Register</button>
                         </div>
                         <div class="col-md-4">
                             
                         </div>
                         <div class="col-md-4">
-                            <button class="btn btn-secondary" (click)="navigateLogin()">Login</button></div>
+                            <button class="btn btn-secondary" (click)="navigateLogin()" [disabled]="errorMessage">Login</button></div>
                     </div>
                     
                     

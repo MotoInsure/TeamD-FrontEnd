@@ -12,6 +12,7 @@ export class DisplayIdvComponent implements OnInit {
   idv : number;
   vehicleObj : Vehicle;
   depreciatedValue : number;
+  errorMessage: boolean = false;
 
   constructor(private router: Router) { } 
 
@@ -26,6 +27,9 @@ export class DisplayIdvComponent implements OnInit {
     this.idv = this.vehicleObj.price - (this.depreciatedValue*(new Date().getFullYear()-this.vehicleObj.purchasingYear))
     // this.idv = Math.abs(this.idv);
 
+    if(this.idv<=0){
+      this.errorMessage=true;
+    }
     
 
     console.log(this.idv);
