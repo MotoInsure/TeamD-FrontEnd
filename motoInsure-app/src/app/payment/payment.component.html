@@ -1,4 +1,4 @@
-<div class= "bg">
+<div class= "bg" *ngIf=!isRequested>
     <nav class="navbar navbar-dark bg-dark">
         <!-- Navbar content -->
         <div class="container-fluid">
@@ -7,7 +7,7 @@
             Let's Find You The Best!
           </span>
           <span class="navbar-text1" >
-            Hello xxx!
+            Hello {{ user.userName }}!
           </span>
           <div class="dropdown">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -121,60 +121,63 @@
     </div>
     <div class="alert alert-success" *ngIf = "isPaid">
         <strong>Success!</strong> Payment Done.
+        <button (click)="getPolicyDetails()">Genrate receipt</button>
     </div>
-    <div class="container" *ngIf = "isRequested">
-        <div class="padding">
-        <div class = "row" style="padding-top: 3%;">
-          
-          <div class = "col-sm-4">
-          <div class ="card1" style="background-color:  white"> 
-            
-            <div class="card-header" style=" background-color: rgb(173, 196, 197); padding-left: 18%;
-              font-size: 99%;"><strong>Here's your Policy Details</strong></div>
-            <div class = "card-body" >
-            
-              
-            <table class="table table-light table-striped">
-                  <tbody>
-                    
-                    <tr>
-                    <!-- <th scope="row">1</th> -->
-                        <td><strong>Expiry Date</strong> </td>
-                        <td>{{ policy.expiryDate }}</td>
-                    </tr>
-                    <tr>
-                        <!-- <th scope="row">3</th> -->
-                        <td><strong>IDV</strong></td>
-                        <td>{{ policy.idv }}</td>
-                    </tr>
-                    <tr>
-                        <!-- <th scope="row">4</th> -->
-                        <td><strong>Max Claim Amount</strong></td>
-                        <td>{{ policy.maxClaimAmount }}</td>
-                    </tr>
-                    <tr>
-                        <!-- <th scope="row">5</th> -->
-                        <td><strong>Purchased Date</strong></td>
-                        <td>{{ policy.purchasedDate }}</td>
-                    </tr>    
-                    <tr>
-                      <!-- <th scope="row">6</th> -->
-                      <td><strong>Tenure</strong> </td>
-                      <td>xxx</td>
-                    </tr>
-                    <tr>
-                        <!-- <th scope="row">7</th> -->
-                        <td><strong>Policy Type</strong></td>
-                        <td>{{ policy.type }}</td>
-                    </tr>
-                    </tbody>
-            </table>
-            </div>
-          </div>
-          </div>
-          <div class = "col-sm-4"></div>
-        </div>
-        </div>
-        <button (click)="getPolicyDetails()"></button>
-      </div>
+    
 </div>
+<div class="container" *ngIf = "isRequested">
+    <div class="padding">
+    <div class = "row" style="padding-top: 3%;">
+      
+      <div class = "col-sm-4">
+      <div class ="card1" style="background-color:  white"> 
+        
+        <div class="card-header" style=" background-color: rgb(173, 196, 197); padding-left: 18%;
+          font-size: 99%;"><strong>Here's your Policy Details</strong></div>
+        <div class = "card-body" >
+        
+          
+        <table id="print-section" class="table table-light table-striped">
+              <tbody >
+                
+                <tr>
+                <!-- <th scope="row">1</th> -->
+                    <td><strong>Expiry Date</strong> </td>
+                    <td>{{ policy.expiryDate }}</td>
+                </tr>
+                <tr>
+                    <!-- <th scope="row">3</th> -->
+                    <td><strong>IDV</strong></td>
+                    <td>{{ policy.idv }}</td>
+                </tr>
+                <tr>
+                    <!-- <th scope="row">4</th> -->
+                    <td><strong>Max Claim Amount</strong></td>
+                    <td>{{ policy.maxClaimAmount }}</td>
+                </tr>
+                <tr>
+                    <!-- <th scope="row">5</th> -->
+                    <td><strong>Purchased Date</strong></td>
+                    <td>{{ policy.purchasedDate }}</td>
+                </tr>    
+                <tr>
+                  <!-- <th scope="row">6</th> -->
+                  <td><strong>Tenure</strong> </td>
+                  <td>xxx</td>
+                </tr>
+                <tr>
+                    <!-- <th scope="row">7</th> -->
+                    <td><strong>Policy Type</strong></td>
+                    <td>{{ policy.type }}</td>
+                </tr>
+                </tbody>
+        </table>
+        </div>
+      </div>
+      
+      </div>
+      <div class = "col-sm-4"></div>
+    </div>
+    </div>
+    
+  </div>
