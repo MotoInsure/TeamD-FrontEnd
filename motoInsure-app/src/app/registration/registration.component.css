@@ -20,30 +20,32 @@ font-family: 'poppins',sans-serif;
 .container{
     max-width: 700px;
     width: 100%;
-    background: #fff;
+    background:thistle;
     padding: 25px 30px;
 }
-.container.title{
-    font-size: 30px;
-    position: relative;
+  .title{
+    color:purple;
+    font-size: 24px;
+    position:relative;
+    font-weight: 700;
 }
-.container.title::before{
+  .title::before{
     position: absolute;
     left: 0;
     bottom: 0;
     height: 3px;
     /* background: #9b59b6; */
 }
-.container table .user-details{
-    display: flex;
-    flex-wrap: wrap;
+    table .user-details{
+      display: flex;
+      flex-wrap: wrap;
 }
-form.user-details.input-box{
-    width: calc(100% / 2 - 20px);
+    form.user-details.input-box{
+      width: calc(100% / 2 - 20px);
 }
-.user-details.input-box input{
-    height: 45px;
-    width: 100%;
+    .user-details.input-box input{
+      height: 45px;
+      width: 100%;
 }
 dropdown {
     float: left;
@@ -90,3 +92,20 @@ dropdown {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+button[type=submit]{
+  padding-left: 10px;
+  padding-top: 5px;
+  border-radius: 8px;
+  border-color:pink;
+  background-color:rgb(5, 102, 102);
+  color:oldlace;
+  font-size: medium;
+  font-weight: 500;
+}
+#partitioned {
+  letter-spacing: 15px;
+  border:none ;
+  background-position-x: 45px;
+
+}
+ 
