@@ -24,6 +24,7 @@ export class RegistrationComponent  {
   isCollapsed:boolean=true
   userOtp:string;
   disappear : boolean = false;
+  
   RegistrationForm = new FormGroup({
     Username: new FormControl(''),
     Phone_Number: new FormControl(''),
@@ -77,7 +78,7 @@ export class RegistrationComponent  {
       this.otp=this.generateOTP();
       localStorage.setItem('otp',this.otp);
       console.log("Generated: "+this.otp);     
-      this.sms.message="OTP "+this.otp;
+      this.sms.message="Your OTP for Motoinsurance policy registraion- "+this.otp;
       this.sms.to="+91"+this.user.phoneNo;
       this.msgservice.sendSms(this.sms);
     }
@@ -94,7 +95,10 @@ export class RegistrationComponent  {
       }  
       return OTP;      
     }
+    
+    
   }
+
   //     validate(){
   //    console.log(this.auth.Username + " = " + this.auth.phonenum + " = " + this.auth.EmailId + " = " + 
   //    this.auth.State + " = " + this.auth.Password + " = " + this.auth.password)

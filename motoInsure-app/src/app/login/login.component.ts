@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { Login } from '../login.model';
+import { MessageService } from '../services/message.service';
 import { UserService } from '../services/user.service';
+import { Sms } from '../sms.model';
 import { User } from '../user.model';
 
 
@@ -13,15 +15,18 @@ import { User } from '../user.model';
 })
 export class LoginComponent implements OnInit {
   login : Login;
+  sms:Sms;
   pwd : boolean= true;
   loggedIn : boolean =false; 
   userName : string;
   email : string;
+  user:User;
   registrationNo : string;
   disappear : boolean = this.loggedIn || this.pwd;
 
-  constructor(private service:UserService, private router: Router) { 
+  constructor(private service:UserService, private router: Router,private msgservice:MessageService) { 
     this.login = new Login();
+    this.sms=new Sms();
   }
 
   ngOnInit(): void {
@@ -53,15 +58,18 @@ export class LoginComponent implements OnInit {
     let password :User;
     //this.service.forgotPassword(this.userName).subscribe(data=>password=data);   
     //console.log(password);
-    this.service.forgotPassword(this.userName).then(
+    this.service.forgotPassword(this.login.email).then(
       (result : User)=> {
         password=result;
-        console.log(password.password);        
+      // console.log(password.password);
+       let temp=password.password;
+       this.sms.to="+91"+this.user.phoneNo;
+       this.sms.message="You have attempted to recover your password.Your password for Motoinsurance policy is"+temp;
+       this.msgservice.sendSms(this.sms);
       }
     );
-    
-  }
-  
+
+  }  
   addVehicle(){
     let user : User;
     user = JSON.parse(localStorage.getItem("user"));
