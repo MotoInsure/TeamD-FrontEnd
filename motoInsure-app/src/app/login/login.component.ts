@@ -1,9 +1,12 @@
+import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import { Login } from '../login.model';
 import { UserService } from '../services/user.service';
+import { VehicleService } from '../services/vehicle.service';
 import { User } from '../user.model';
+import { Vehicle } from '../Vehicle.model';
 
 
 @Component({
@@ -20,7 +23,7 @@ export class LoginComponent implements OnInit {
   registrationNo : string;
   disappear : boolean = this.loggedIn || this.pwd;
 
-  constructor(private service:UserService, private router: Router) { 
+  constructor(private service:UserService,private srv:VehicleService, private router: Router) { 
     this.login = new Login();
   }
 
@@ -69,6 +72,22 @@ export class LoginComponent implements OnInit {
     this.service.addVehicle(this.registrationNo, user);
     this.router.navigate(["policy"]);
   }
+  brand:string[];
+    getBrand(){
+      
+      this.srv.getBrand("Four Wheeler").then(
+        (result:string[])=>{
+          this.brand=result;
+          console.log(this.brand);          
+        }
+      );
+      
+    }
+    getModel(){
+      const model = this.brand.filter(str=>str.match("Maruti Suzuki"));
+      console.log(model);
+      
+    }
 
 
 
