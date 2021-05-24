@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Policy } from '../policy.model';
 import { PolicyComponent } from '../policy/policy.component';
+import { MessageService } from '../services/message.service';
 import { PaymentService } from '../services/payment.service';
 import { UserService } from '../services/user.service';
 import { User } from '../user.model';
@@ -21,8 +22,9 @@ export class PaymentComponent implements OnInit {
   paymentForm : FormGroup;
   policy : Policy;
   savedPolicyId : number;
+  email:string;
 
-  constructor(private formBuilder: FormBuilder,private service:UserService, private paymentService: PaymentService) {
+  constructor(private formBuilder: FormBuilder,private service:UserService, private paymentService: PaymentService, private msgservice:MessageService) {
 
    }
 
@@ -58,11 +60,19 @@ export class PaymentComponent implements OnInit {
       (result:Policy)=>{
         policy = result;
         console.log(policy);
+      
+
       }
       
+    
     );
     
     this.isRequested = true;
+    this.sendEmail();
     
+  }
+  sendEmail(){
+    this.email="kajal1610185@akgec.ac.in";
+    this.msgservice.sendEmail(this.email);
   }
 }
