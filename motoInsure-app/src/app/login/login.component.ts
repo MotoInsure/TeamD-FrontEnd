@@ -9,7 +9,7 @@ import { VehicleService } from '../services/vehicle.service';
 import { Sms } from '../sms.model';
 import { User } from '../user.model';
 import { Vehicle } from '../Vehicle.model';
-import { Sms } from '../sms.model';
+
 
 
 @Component({
