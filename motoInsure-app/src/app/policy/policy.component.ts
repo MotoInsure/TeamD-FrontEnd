@@ -3,6 +3,7 @@ import { PolicyService } from '../services/policy.service';
 import { Router } from '@angular/router';
 import { Policy } from '../policy.model';
 import { UserService } from '../services/user.service';
+import { User } from '../user.model';
 
 @Component({
   selector: 'app-policy',
@@ -63,6 +64,12 @@ export class PolicyComponent implements OnInit {
       maxClaimAmount => this.successMessage = maxClaimAmount,
       error => this.maxClaimAmount = error.error.text.split(":")[1]
     );
+
+  }
+  
+  getUserDetails(){
+    let user : User;
+    user = JSON.parse(localStorage.getItem("user"));
   }
 
   navigate(num : number){

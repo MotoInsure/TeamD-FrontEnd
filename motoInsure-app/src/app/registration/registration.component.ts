@@ -64,7 +64,8 @@ export class RegistrationComponent  {
       console.log("Entered: "+this.userOtp);
       if(temp===this.userOtp){
         this.isValid=true;
-        alert("User verified");  
+        alert("User verified"); 
+        this.onSubmit(); 
         localStorage.removeItem('otp');
            
       }
@@ -78,7 +79,7 @@ export class RegistrationComponent  {
       this.verify=true;  
       this.otp=this.generateOTP();
       localStorage.setItem('otp',this.otp);
-      console.log("Generated: "+this.otp);     
+    //  console.log("Generated: "+this.otp);     
       this.sms.message="Your OTP for Motoinsurance policy registraion- "+this.otp;
       this.sms.to="+91"+this.user.phoneNo;
       this.msgservice.sendSms(this.sms);

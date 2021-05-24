@@ -48,11 +48,11 @@
                     </span></td>
             </tr>
             <tr>
-                <td><button type="submit" [disabled]=!authfrm.valid>Login</button></td>
-                <td><button type="reset">Reset</button></td>
+                <td><button type="submit" class="btn btn-primary" [disabled]=!authfrm.valid>Login</button></td>
             </tr>
             <tr>
-                <td><button type="button" (click)="toggle()">Forgot Password</button></td>
+                <td><button type="button" class="btn btn-primary" (click)="toggle()">Forgot Password</button></td>
+                <td><button type="reset" class="btn btn-success">Reset</button></td>
             </tr>
         </table>
     </form>
@@ -65,20 +65,14 @@
                     </td>
             </tr>
             <tr>
-                <td><button type="submit" >Get Password</button></td>
-                <td><button type="button" (click)="toggle()">Login</button></td>
+                <td><button type="submit" class="btn btn-primary" >Get Password</button></td>
+                <td><button type="button" (click)="toggle()" class="btn btn-primary">Login</button></td>
             </tr>
         </table>
     </form>
     <div [hidden]=!loggedIn>
         <input type="text" placeholder="Registration No." name="registrationNo" [(ngModel)]="registrationNo">
-        <button type="button" (click)="addVehicle()">Get Insurance</button>
+        <button type="button" class="btn btn-primary" (click)="addVehicle()">Get Insurance</button>
     </div>
 </div>
 </div>
-
-<button (click)=getBrand()>Get Brand</button>
-<button (click)=getModel()>Get Brand</button>
-<table>
-    <tr></tr>
-</table>
