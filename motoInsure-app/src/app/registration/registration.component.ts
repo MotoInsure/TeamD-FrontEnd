@@ -66,7 +66,7 @@ export class RegistrationComponent  {
         this.isValid=true;
         alert("User verified");  
         localStorage.removeItem('otp');
-        this.verify=true;      
+           
       }
       else{
         this.isValid=false;
@@ -75,6 +75,7 @@ export class RegistrationComponent  {
     }
   
     sendSms(){
+      this.verify=true;  
       this.otp=this.generateOTP();
       localStorage.setItem('otp',this.otp);
       console.log("Generated: "+this.otp);     
@@ -82,10 +83,10 @@ export class RegistrationComponent  {
       this.sms.to="+91"+this.user.phoneNo;
       this.msgservice.sendSms(this.sms);
     }
-    toggle(){
-      this.disappear=!this.verify;
-      this.verify=!this.disappear;
-    }
+    // toggle(){
+    //   this.disappear=!this.verify;
+    //   this.verify=!this.disappear;
+    // }
     
     generateOTP() {
       var digits = '0123456789';
