@@ -45,6 +45,7 @@ export class PaymentComponent implements OnInit {
 
     );
     this.isPaid = true;
+    
   }
   getPolicyDetails(){
     let user : User;
@@ -55,10 +56,10 @@ export class PaymentComponent implements OnInit {
         policy = result;
         console.log(policy);
       }
-
+      
     );
-    this.isRequested = true;
     
+    this.isRequested = true;
     
   }
 }
