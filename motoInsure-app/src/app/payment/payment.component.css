@@ -27,6 +27,16 @@ font-family: 'poppins',sans-serif;
     padding: 1.5rem !important;
     margin-left: 400px
 }
+@media print{
+  
+  tr:nth-child(odd){
+      background-color:lightgray;
+  }
+  tr:nth-child(even){
+      background-color: slategray;
+  } 
+}
+ 
 /*
 .card {
     margin-bottom: 1.5rem

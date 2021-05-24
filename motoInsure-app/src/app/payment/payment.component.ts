@@ -12,7 +12,7 @@ import { User } from '../user.model';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
-
+  user = JSON.parse(localStorage.getItem("user"));
   isPaid : boolean =false;
   isRequested : boolean = false;
   paymentForm : FormGroup;
