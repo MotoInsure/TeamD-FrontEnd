@@ -18,6 +18,7 @@ export class PaymentComponent implements OnInit {
   paymentForm : FormGroup;
   policy : Policy;
   savedPolicyId : number;
+  prit:boolean=false;
 
   constructor(private formBuilder: FormBuilder,private service:UserService, private paymentService: PaymentService) {
 
@@ -54,12 +55,20 @@ export class PaymentComponent implements OnInit {
     this.service.getPolicyByUserid(user.id).then(
       (result:Policy)=>{
         policy = result;
-        console.log(policy);
+        if(policy !==null)
+        localStorage.setItem("policy",JSON.stringify(policy));
+        //console.log(policy);
       }
       
     );
     
     this.isRequested = true;
     
+  }
+  logout(){
+    this.service.logout();
+  }
+  print(){
+    this.prit=true;
   }
 }

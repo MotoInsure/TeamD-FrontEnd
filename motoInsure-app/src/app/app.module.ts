@@ -27,6 +27,7 @@ import { DisplayIdv1Component } from './display-idv1/display-idv1.component';
 import { MessageService } from './services/message.service';
 
 
+
 @NgModule({
   declarations: [ 
     AppComponent,
@@ -39,6 +40,7 @@ import { MessageService } from './services/message.service';
     DisplayIdvComponent,
     VehicleDisplayComponent,
     DisplayIdv1Component,
+    
   ],
   imports: [
     BrowserModule,

@@ -36,7 +36,9 @@ font-family: 'poppins',sans-serif;
       background-color: slategray;
   } 
 }
- 
+.card1 {
+  width:140%
+}
 /*
 .card {
     margin-bottom: 1.5rem
