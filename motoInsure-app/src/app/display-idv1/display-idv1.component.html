@@ -25,10 +25,11 @@
     <div class="container">
         <div class="row" style="padding-top: 14%; padding-left :32%">
             <div class="card">
-                <div class="card-header">Insure Declared Value</div>
+                <div class="card-header" style=" background-color: rgb(173, 196, 197); padding-left: 18%;
+                font-size: 99%;">Insure Declared Value</div>
                 <div class="card-body">
                     <div *ngIf="!errorMessage">
-                        MotoInsure can provide: {{idv|currency:'INR':'symbol'}}  as Insurance for your vehicle 
+                        MotoInsure can provide:<strong> {{idv|currency:'INR':'symbol'}} </strong> as Insurance for your vehicle 
               
                     </div>
                     <div *ngIf="errorMessage">
