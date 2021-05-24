@@ -1,3 +1,5 @@
+<!-- author : Shruti Mittal -->
+
 <nav class="navbar navbar-dark bg-dark">
     <!-- Navbar content -->
     <div class="container-fluid">
@@ -108,7 +110,7 @@
        <form (ngSubmit)="sendSms()">
         <button type="submit" [hidden]=isValid>Send OTP</button>
         </form>
-        <div *ngIf="verify&&!isValid">Enter OTP
+        <div *ngIf="verify">Enter OTP
             <span ><input id="partitioned" type="text" name="UserOtp" inputmode="numeric" maxlength="6" required pattern="[0-9]" [(ngModel)]=userOtp/>
                 <button type="submit" (click)="validateOtp()">Verify User</button>
         </span> 

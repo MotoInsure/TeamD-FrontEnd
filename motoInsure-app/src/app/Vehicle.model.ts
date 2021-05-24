@@ -1,3 +1,6 @@
+// author : Theres Thomas
+// co-author : Hemaja Patoju
+
 export class Vehicle{
     registrationNo : string;
     purchasingYear : number;

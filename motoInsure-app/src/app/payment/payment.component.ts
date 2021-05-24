@@ -1,7 +1,11 @@
+// author : Hemaja Patoju 
+// co -author : Jai Baheti
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Policy } from '../policy.model';
 import { PolicyComponent } from '../policy/policy.component';
+import { MessageService } from '../services/message.service';
 import { PaymentService } from '../services/payment.service';
 import { UserService } from '../services/user.service';
 import { User } from '../user.model';
@@ -19,8 +23,9 @@ export class PaymentComponent implements OnInit {
   policy : Policy;
   savedPolicyId : number;
   prit:boolean=false;
+  email:string;
 
-  constructor(private formBuilder: FormBuilder,private service:UserService, private paymentService: PaymentService) {
+  constructor(private formBuilder: FormBuilder,private service:UserService, private paymentService: PaymentService, private msgservice:MessageService) {
 
    }
 
@@ -58,11 +63,16 @@ export class PaymentComponent implements OnInit {
         if(policy !==null)
         localStorage.setItem("policy",JSON.stringify(policy));
         //console.log(policy);
+        console.log(policy);
+      
+
       }
       
+    
     );
     
     this.isRequested = true;
+    this.sendEmail();
     
   }
   logout(){
@@ -70,5 +80,10 @@ export class PaymentComponent implements OnInit {
   }
   print(){
     this.prit=true;
+  }
+
+  sendEmail(){
+    this.email="kajal1610185@akgec.ac.in";
+    this.msgservice.sendEmail(this.email);
   }
 }

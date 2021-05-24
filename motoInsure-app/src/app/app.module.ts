@@ -1,3 +1,5 @@
+// authors : Theres Thomas, Shruti Mittal, Jai Baheti, Kajal Tiwari, Hemaja Patoju
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
