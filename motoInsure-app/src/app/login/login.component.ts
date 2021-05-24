@@ -11,6 +11,7 @@ import { User } from '../user.model';
 import { Vehicle } from '../Vehicle.model';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
   registrationNo : string;
   disappear : boolean = this.loggedIn || this.pwd;
 
-  constructor(private msgservice:MessageService, private service:UserService,private srv:VehicleService, private router: Router) { 
+  constructor(private service:UserService,private srv:VehicleService, private router: Router, private msgservice:MessageService ) { 
     this.login = new Login();
     this.sms=new Sms();
   }

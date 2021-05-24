@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-md-6 form-group">
                     <label>Phone Number</label>
-                    <input type="text" name="phonenum" [(ngModel)]=user.phoneNo  required maxlength="10" pattern="[0-9]{10,10}"  
+                    <input type="text" name="phonenum" [(ngModel)]=user.phoneNo  required maxlength="10" pattern="[7-9][0-9]{9}"  
                      
                      placeholder="Enter Your Phone_number" class='form-control' formControlName="Phone_Number">
                      <span *ngIf="RegistrationForm.controls.Phone_Number.dirty && RegistrationForm.controls.Phone_Number.invalid" 

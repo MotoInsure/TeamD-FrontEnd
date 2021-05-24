@@ -53,8 +53,7 @@ import { MessageService } from './services/message.service';
     MatSelectModule,
     HttpClientModule,
     MatTableModule,
-    MatCheckboxModule,
-
+    MatCheckboxModule
   ],
   providers: [PolicyService, PaymentService, MessageService],
   bootstrap: [AppComponent]
