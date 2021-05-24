@@ -9,6 +9,7 @@ import { VehicleService } from '../services/vehicle.service';
 import { Sms } from '../sms.model';
 import { User } from '../user.model';
 import { Vehicle } from '../Vehicle.model';
+import { Sms } from '../sms.model';
 
 
 @Component({
@@ -26,8 +27,8 @@ export class LoginComponent implements OnInit {
   user:User;
   registrationNo : string;
   disappear : boolean = this.loggedIn || this.pwd;
-
-  constructor(private service:UserService,private srv:VehicleService, private router: Router, private msgservice:MessageService) { 
+  
+  constructor(private service:UserService,private srv:VehicleService, private router: Router, private msgservice:MessageService ) { 
     this.login = new Login();
     this.sms=new Sms();
   }
