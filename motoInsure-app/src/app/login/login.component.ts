@@ -6,6 +6,7 @@ import { Login } from '../login.model';
 import { MessageService } from '../services/message.service';
 import { UserService } from '../services/user.service';
 import { VehicleService } from '../services/vehicle.service';
+import { Sms } from '../sms.model';
 import { User } from '../user.model';
 import { Vehicle } from '../Vehicle.model';
 
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
   registrationNo : string;
   disappear : boolean = this.loggedIn || this.pwd;
 
-  constructor(private service:UserService,private srv:VehicleService, private router: Router) { 
+  constructor(private msgservice:MessageService, private service:UserService,private srv:VehicleService, private router: Router) { 
     this.login = new Login();
     this.sms=new Sms();
   }
