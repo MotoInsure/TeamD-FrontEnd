@@ -1,9 +1,15 @@
 
 .bg{ 
-    background: url(../../assets/image/x.jpg); 
+    background: url(../../assets/image/z.jpeg) no-repeat center; 
        height: 130vh; 
        align-items: center;
+       width: 100%;
+       -webkit-background-size: cover;
 } 
+.x{
+  max-width: 310px;
+}
+
 .card{
     max-width: 310px;
     max-height: 675px;

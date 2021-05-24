@@ -6,10 +6,12 @@ margin: 0;
 font-family: 'poppins',sans-serif;
  } 
 .bg{ 
- background: url(../../assets/image/x.jpg); 
+ background: url(../../assets/image/q.jpg) no-repeat center ; 
     display: flex; 
     height: 100vh; 
+    width: 100%;
     align-items: center;
+    -webkit-background-size:cover;
  } 
  .navbar-text{
     position: absolute;
@@ -22,6 +24,7 @@ font-family: 'poppins',sans-serif;
     width: 100%;
     background: #fff;
     padding: 25px 30px;
+    opacity:90%;
 }
 .container.title{
     font-size: 30px;
