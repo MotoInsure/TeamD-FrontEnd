@@ -101,14 +101,14 @@
                 </div>
             <div class="row">
                 <div class="col-md-12">
-                    <button type="submit" (click)="onSubmit()" class="btn btn-secondary btn-block btn-submit" [disabled]=!RegistrationForm.valid> Submit</button>
+                    <button type="submit" (click)="onSubmit()" class="btn btn-secondary btn-block btn-submit" *ngIf="isValid"> Submit</button>
                 </div>
             </div>
 		</form>
        <form (ngSubmit)="sendSms()">
         <button type="submit" [hidden]=isValid>Send OTP</button>
         </form>
-        <div [hidden]=isValid>Enter OTP
+        <div *ngIf="verify&&!isValid">Enter OTP
             <span ><input id="partitioned" type="text" name="UserOtp" inputmode="numeric" maxlength="6" required pattern="[0-9]" [(ngModel)]=userOtp/>
                 <button type="submit" (click)="validateOtp()">Verify User</button>
         </span> 
