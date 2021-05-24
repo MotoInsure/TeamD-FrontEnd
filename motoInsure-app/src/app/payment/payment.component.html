@@ -144,37 +144,38 @@ co-author : Jai Baheti-->
             <table class="table table-light table-striped">
                 <tbody>
                 <tr>
-                    <th scope="row">1</th>
+                    
                     <td><strong>Policy Type</strong></td>
                     <td>{{ policy.type }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">2</th>
+                    
                     <td><strong>IDV</strong></td>
-                    <td>{{ policy.idv }}</td>
+                    <td>₹ {{ policy.idv }}</td>
                 </tr>
                 <tr>
-                    <th scope="row">3</th>
+                    
                     <td><strong>Max Claim Amount</strong></td>
-                    <td>{{ policy.maxClaimAmount }}</td>
+                    <td>₹ {{ policy.maxClaimAmount }}</td>
                 </tr>
 
                 <tr>
-                    <th scope="row">4</th>
+                    
                     <td><strong>Purchased Date</strong></td>
-                    <td>{{ policy.purchasedDate }}</td>
+                    <td> {{ policy.purchasedDate }}</td>
                 </tr>
 
                 <tr>
-                <th scope="row">5</th>
+                
                     <td><strong>Expiry Date</strong> </td>
                     <td>{{ policy.expiryDate }}</td>
                 </tr>
                 </tbody>
             </table>
             </div>
-            <button (click)="print()">Print Receipt</button>
+           
           </div>
+          <button class="btn btn-secondary" (click)="print()">Print Receipt</button>
           </div>
           <div class = "col-sm-4"></div>
         </div>
@@ -185,29 +186,29 @@ co-author : Jai Baheti-->
 <table class="table table-light table-striped">
     <tbody>
     <tr>
-        <th scope="row">1</th>
+        
         <td><strong>Policy Type</strong></td>
         <td>{{ policy.type }}</td>
     </tr>
     <tr>
-        <th scope="row">2</th>
+        
         <td><strong>IDV</strong></td>
-        <td>{{ policy.idv }}</td>
+        <td>₹ {{ policy.idv }}</td>
     </tr>
     <tr>
-        <th scope="row">3</th>
+        
         <td><strong>Max Claim Amount</strong></td>
-        <td>{{ policy.maxClaimAmount }}</td>
+        <td> ₹ {{ policy.maxClaimAmount }}</td>
     </tr>
 
     <tr>
-        <th scope="row">4</th>
+        
         <td><strong>Purchased Date</strong></td>
         <td>{{ policy.purchasedDate }}</td>
     </tr>
 
     <tr>
-    <th scope="row">5</th>
+    
         <td><strong>Expiry Date</strong> </td>
         <td>{{ policy.expiryDate }}</td>
     </tr>
