@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PolicyService } from '../services/policy.service';
 import { Router } from '@angular/router';
 import { Policy } from '../policy.model';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-policy',
@@ -27,7 +28,7 @@ export class PolicyComponent implements OnInit {
 
   policyObj : Policy = new Policy();
 
-  constructor(private policyService : PolicyService, private router:Router) { 
+  constructor(private serv:UserService, private policyService : PolicyService, private router:Router) { 
     this.registrationNo = JSON.parse(localStorage.getItem("registrationNo"));
     console.log(this.registrationNo);
   }
@@ -40,6 +41,9 @@ export class PolicyComponent implements OnInit {
     this.expiryDate3 = new Date(new Date().getFullYear()+3, new Date().getMonth(), new Date().getDate()).toDateString();
     this.expiryDate5 = new Date(new Date().getFullYear()+5, new Date().getMonth(), new Date().getDate()).toDateString();
     
+  }
+  logout(){
+    this.serv.logout();
   }
 
   getPolicyAmount(){

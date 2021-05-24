@@ -32,6 +32,10 @@ const routes: Routes = [
     component: PolicyComponent
   },
   {
+    path: 'login/registration',
+    component: RegistrationComponent
+  },
+  {
     path: 'payment',
     component: PaymentComponent
   },
