@@ -1,3 +1,6 @@
+// author : Theres Thomas
+// co-author: Hemaja Patoju
+
 import { Component, OnInit } from '@angular/core';
 import { Vehicle } from '../Vehicle.model';
 import { UserService } from '../services/user.service';
