@@ -22,8 +22,8 @@
    
     <div class="container">
 
-        <div [hidden]=!disappear class="title"> Login</div>
-    <form (ngSubmit)="loginUser()" #authfrm=ngForm>
+    <form [hidden]=!disappear (ngSubmit)="loginUser()" #authfrm=ngForm>
+        <div  class="title"> Login</div>
         <table class="table-light">
 
             <tr class="table-light">
@@ -57,19 +57,20 @@
         </table>
     </form>
     <form [hidden]=pwd (ngSubmit)="forgotPwd()">
-        <table class="table">
+        <div class="title">Recover Password</div>
+        <table class="table-light">
             <tr>
-                <td>UserName</td>
-                <td><input type="userName" name="userName" [(ngModel)]=userName>
+                <td>Email</td>
+                <td><input type="email" name="userName" [(ngModel)]=login.email>
                     </td>
             </tr>
             <tr>
-                <td><button type="submit" >Forgot Password</button></td>
+                <td><button type="submit" >Get Password</button></td>
                 <td><button type="button" (click)="toggle()">Login</button></td>
             </tr>
         </table>
     </form>
-    <div [hidden] = !loggedIn>
+    <div [hidden]=!loggedIn>
         <input type="text" placeholder="Registration No." name="registrationNo" [(ngModel)]="registrationNo">
         <button type="button" (click)="addVehicle()">Get Insurance</button>
     </div>

@@ -39,7 +39,7 @@
                 </div>
                 <div class="col-md-6 form-group">
                     <label>Phone Number</label>
-                    <input type="number" name="phonenum" [(ngModel)]=user.phoneNo  required maxlength="10" pattern="[0-9]{10,10}"  
+                    <input type="text" name="phonenum" [(ngModel)]=user.phoneNo  required maxlength="10" pattern="[0-9]{10,10}"  
                      
                      placeholder="Enter Your Phone_number" class='form-control' formControlName="Phone_Number">
                      <span *ngIf="RegistrationForm.controls.Phone_Number.dirty && RegistrationForm.controls.Phone_Number.invalid" 
@@ -86,7 +86,7 @@
                 </div>
 
 
-                <div class="col-md-6 form-group">
+               <div class="col-md-6 form-group">
                     <label>State</label>
                     <input type="text" name="State" required pattern="[A-Z a-z]{2,}" [(ngModel)]=user.state
                     placeholder="Enter Your State" class='form-control' formControlName="State">
@@ -105,13 +105,12 @@
                 </div>
             </div>
 		</form>
-        
-    <form (ngSubmit)="sendSms()">
-        <button type="submit">Send OTP</button>
+       <form (ngSubmit)="sendSms()">
+        <button type="submit" [hidden]=isValid>Send OTP</button>
         </form>
-        <div>Enter OTP
-            <span ><input type="text" name="UserOtp" required pattern="[0-9]{6}" [(ngModel)]=userOtp>
-            <button type="submit" (click)="validateOtp()">Verify User</button>
+        <div [hidden]=isValid>Enter OTP
+            <span ><input id="partitioned" type="text" name="UserOtp" inputmode="numeric" maxlength="6" required pattern="[0-9]" [(ngModel)]=userOtp/>
+                <button type="submit" (click)="validateOtp()">Verify User</button>
         </span> 
         </div>
 	</div>
