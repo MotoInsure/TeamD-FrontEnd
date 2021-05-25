@@ -30,6 +30,7 @@ import { MessageService } from './services/message.service';
 import { ProfileComponent } from './profile/profile.component';
 
 
+
 @NgModule({
   declarations: [ 
     AppComponent,

@@ -22,6 +22,7 @@ export class PaymentComponent implements OnInit {
   paymentForm : FormGroup;
   policy : Policy;
   savedPolicyId : number;
+  prit:boolean=false;
   email:string;
 
   constructor(private formBuilder: FormBuilder,private service:UserService, private paymentService: PaymentService, private msgservice:MessageService) {
@@ -59,8 +60,10 @@ export class PaymentComponent implements OnInit {
     this.service.getPolicyByUserid(user.id).then(
       (result:Policy)=>{
         policy = result;
-      //  console.log(policy);
-      localStorage.setItem("policy",JSON.stringify(policy));
+        if(policy !==null)
+        localStorage.setItem("policy",JSON.stringify(policy));
+        //console.log(policy);
+        console.log(policy);
       
       }
       
@@ -71,6 +74,13 @@ export class PaymentComponent implements OnInit {
     this.sendEmail();
     
   }
+  logout(){
+    this.service.logout();
+  }
+  print(){
+    this.prit=true;
+  }
+
   sendEmail(){
     this.email="kajal1610185@akgec.ac.in";
     this.msgservice.sendEmail(this.email);

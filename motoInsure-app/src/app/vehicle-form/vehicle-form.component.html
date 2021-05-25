@@ -18,31 +18,34 @@ co-author : Jai Baheti-->
         <div class="dropdown-content">
           
           <a href="#">Home </a>
-          <a href="#">Login </a>
-          <a href="#">Register </a>
+          <a [routerLink]="['login']">Login </a>
+          <a [routerLink]="['registration']">Register </a>
         </div>
       </div> 
     </div>
   </nav>
-  
-  <div class="container"  *ngIf="isOver">
-
+  <div>
+    <br/>
+    
+  </div>
+  <div class="container" style="margin-left: 36%;" *ngIf="isOver">
    
-    <div class="form-group">
+    
+    <div class="form-group" style="width: 30%;">
     <select *ngIf="getVehType()" [(ngModel)]="selectedVehType" (change)="onSelectVehType($event.target.value)" class="form-control input-lg" id="vehicle">
     <option value="0">Select Your Vehicle Details </option>
     <option *ngFor="let vehicle of getVehType()" value= {{vehicle.id}}>{{vehicle.name}}</option>
     </select> 
     </div>
      
-    <div class="form-group">
+    <div class="form-group" style="width: 30%;">
     <select *ngIf="getBrand()" [(ngModel)]="selectedBrand" (change)="onSelectBrand($event.target.value)" class="form-control input-lg" id="brand">
     <option value="0">Select Brand</option>
     <option *ngFor="let brand of brands" value= {{brand.id}}>{{brand.name}}</option>
     </select>
     </div>
      
-    <div class="form-group">
+    <div class="form-group" style="width: 30%;">
     
     <select *ngIf="getModel()" [(ngModel)]="selectedModel" (change)="onSelectModel($event.target.value)" class="form-control input-lg" id="model">
       <option value="0">Select Model</option>
@@ -50,7 +53,7 @@ co-author : Jai Baheti-->
     </select>
     </div>
   
-    <div class="form-group">
+    <div class="form-group" style="width: 30%;">
         <select class="form-control input-lg" id="variant" required>
           <option *ngIf="!selectedModel" value="0">Select Variant</option>
           <option *ngFor="let variant of variants" value= {{variant.id}}>{{variant.name}}</option>
@@ -58,38 +61,37 @@ co-author : Jai Baheti-->
     </div>
     
     
-      <div class="form-group">
+      <div class="form-group" style="width: 30%;">
         <select class="form-control input-lg" id="fuelType" required>
         <option value="0">Select Fuel Type</option>
-        <option value="1">Diesal </option>
+        <option value="1">Diesel </option>
         <option value="2">Petrol  </option>
       </select> 
       </div>
 
-      <div class="form-group" >
+      <div class="form-group" style="width: 30%;">
         <input [(ngModel)]="year" maxlength="4" class="form-control input-lg" id="purchasingYear" type="text" placeholder="YYYY" required >
       </div>
 
-      <div class="form-group">
+      <div class="form-group" style="width: 30%;">
         <input [(ngModel)]="price" class="form-control input-lg" id="price" type="text" placeholder="Enter Price " required >
       </div>
       <br>
 
-    <div class="form-check" >
+    <div class="form-check" style="width: 30%;" >
       <input type="checkbox" class="form-check-input input-lg" color="warn" (input)="onInput($event)">
-      <div class="badge bg-secondary input-lg text-wrap" style="width: 100%; color: white; font-size: medium;">
-        Yes! These are my Vehicle details.
+      <div class="badge bg-secondary input-lg  text-wrap" style="width: 100%; color: white; font-size: medium;">
+        Yes! These are my vehicle details.
       </div>
     </div>
     <br>
-    <div>
-    <button type="button" class="btn btn-secondary btn1" *ngIf="AllValues" (click)="showIdv()">Veiw IDV</button>
+    <div  >
+    <button type="button" class="btn btn-secondary btn1 "  *ngIf="AllValues" (click)="showIdv()">View IDV</button>
 
   </div>
-    <!-- <div>
-      <button  class="button1"   *ngIf="AllValues"  (click)="next()"  >   Next</button>
-    </div> -->
-    </div>
+
+  
+   </div>
    
 
 </div>
