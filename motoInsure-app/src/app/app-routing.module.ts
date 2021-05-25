@@ -12,6 +12,7 @@ import { VehicleFormComponent } from './vehicle-form/vehicle-form.component';
 import { VehicleDisplayComponent } from './vehicle-display/vehicle-display.component';
 import { DisplayIdv1Component } from './display-idv1/display-idv1.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -22,11 +23,35 @@ const routes: Routes = [
     component: HomeComponent
   },  
   {
-    path:'login',
+    path:'login' ,
     component: LoginComponent
   },
   {
+    path:'vehicleDisplay/login',
+    component: LoginComponent
+  },
+  {
+    path:'idv1/login',
+    component: LoginComponent
+  },
+  {
+    path: 'idv1/registration',
+    component: RegistrationComponent
+  },
+  {
+    path:'idv/login',
+    component: LoginComponent
+  },
+  {
+    path: 'idv/registration',
+    component: RegistrationComponent
+  },
+  {
     path: 'registration',
+    component: RegistrationComponent
+  },
+  {
+    path: 'vehicleDisplay/registration',
     component: RegistrationComponent
   },
   {
@@ -41,6 +66,7 @@ const routes: Routes = [
     path: 'payment',
     component: PaymentComponent
   },
+  
   {
     path: 'vehicle',
     component: VehicleFormComponent

@@ -16,8 +16,8 @@ co-author : Hemaja Patoju -->
         
         <div class="dropdown-content">
           <a href="#">Home </a>
-          <a href="#">Login </a>
-          <a href="#">Register </a>
+          <a [routerLink]="['login']">Login </a>
+          <a  [routerLink]="['registration']">Register </a>
         </div>
       </div>
       
@@ -92,7 +92,7 @@ co-author : Hemaja Patoju -->
                  <tr>
                      <!-- <th scope="row">7</th> -->
                      <td><strong>Price</strong></td>
-                     <td>{{ price }}</td>
+                     <td>₹ {{ price }}</td>
                  </tr>
                  </tbody>
          </table>

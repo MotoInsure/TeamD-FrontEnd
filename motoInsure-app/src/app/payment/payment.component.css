@@ -10,11 +10,13 @@ margin: 0;
  box-sizing: border-box; 
 font-family: 'poppins',sans-serif;
  } 
-.bg{ 
- background: url(../../assets/image/x.jpg); 
-    height: 120vh; 
-    align-items: center;
- } 
+ .bg{ 
+  background: url(../../assets/image/x.jpg) no-repeat center; 
+     height: 140vh; 
+     align-items: center;
+     -webkit-background-size: cover;
+  }
+
  .navbar-text{
     position: absolute;
     top: 50%;
@@ -41,7 +43,9 @@ font-family: 'poppins',sans-serif;
       background-color: slategray;
   } 
 }
- 
+.card1 {
+  width:175%
+}
 /*
 .card {
     margin-bottom: 1.5rem
