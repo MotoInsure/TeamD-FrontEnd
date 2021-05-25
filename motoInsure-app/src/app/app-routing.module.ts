@@ -31,6 +31,10 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
+    path:'vehicle/login',
+    component: LoginComponent
+  },
+  {
     path:'idv1/login',
     component: LoginComponent
   },
@@ -52,6 +56,10 @@ const routes: Routes = [
   },
   {
     path: 'vehicleDisplay/registration',
+    component: RegistrationComponent
+  },
+  {
+    path: 'vehicle/registration',
     component: RegistrationComponent
   },
   {
