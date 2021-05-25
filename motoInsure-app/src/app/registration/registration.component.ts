@@ -1,5 +1,5 @@
 // author : Kajal Tiwari;
-// co-author : Shruti Mittal
+// co-author : Shruti Mittal, Jai Baheti 
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -20,7 +20,7 @@ export class RegistrationComponent  {
   user:User;
   sms: Sms;
   sameUser : boolean = false;
-  verify : boolean= true;
+  verify : boolean= false;
   submit : boolean =false;
   otp:string;
   isValid:boolean=false;
@@ -62,8 +62,7 @@ export class RegistrationComponent  {
     }
     validateOtp(){
       let temp=localStorage.getItem('otp');
-      console.log("Generated : "+temp);
-     // console.log(this.otp);
+      console.log("Generated : "+temp)
       console.log("Entered: "+this.userOtp);
       if(temp===this.userOtp){
         this.isValid=true;
@@ -82,15 +81,10 @@ export class RegistrationComponent  {
       this.verify=true;  
       this.otp=this.generateOTP();
       localStorage.setItem('otp',this.otp);
-    //  console.log("Generated: "+this.otp);     
       this.sms.message="Your OTP for Motoinsurance policy registraion- "+this.otp;
       this.sms.to="+91"+this.user.phoneNo;
       this.msgservice.sendSms(this.sms);
     }
-    // toggle(){
-    //   this.disappear=!this.verify;
-    //   this.verify=!this.disappear;
-    // }
     
     generateOTP() {
       var digits = '0123456789';
@@ -103,9 +97,3 @@ export class RegistrationComponent  {
     
     
   }
-
-  //     validate(){
-  //    console.log(this.auth.Username + " = " + this.auth.phonenum + " = " + this.auth.EmailId + " = " + 
-  //    this.auth.State + " = " + this.auth.Password + " = " + this.auth.password)
-  //    }
-  //}     

@@ -28,7 +28,6 @@ export class DisplayIdv1Component implements OnInit {
 
     this.depreciatedValue = this.vehicleObj.price*0.05;
     this.idv = this.vehicleObj.price - (this.depreciatedValue*(new Date().getFullYear()-this.vehicleObj.purchasingYear))
-    // this.idv = Math.abs(this.idv);
 
     if(this.idv<=0){
       this.errorMessage=true;

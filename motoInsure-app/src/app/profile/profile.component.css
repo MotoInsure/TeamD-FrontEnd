@@ -1,8 +1,13 @@
+/**
+@author:Kajal Tiwari
+@version: 1.0
 
+*/
 .bg{ 
  background: url(../../assets/image/p.jpg) no-repeat center ; 
     display: flex; 
-    height: 100vh; 
+    height: 100vh;
+    max-height: 100%; 
     width: 100%; 
     -webkit-background-size:cover;
  } 
@@ -20,6 +25,7 @@
     background-color: rgb(159, 159, 223);
     text-align: center;
     padding: 8px 5px 5px;
+
 }
 table{
     position: relative;

@@ -74,7 +74,6 @@ export class PolicyComponent implements OnInit {
 
     this.policyObj.maxClaimAmount = this.maxClaimAmount;
     this.policyObj.idv = this.maxClaimAmount;
-    // this.policyObj.purchasedDate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
     this.newPurchasedDate = new Date();
     console.log(this.newPurchasedDate.getMonth());
     this.policyObj.purchasedDate = this.newPurchasedDate.getFullYear() +"-"+("0"+this.newPurchasedDate.getMonth()).slice(-2)+"-"+this.newPurchasedDate.getDate();
