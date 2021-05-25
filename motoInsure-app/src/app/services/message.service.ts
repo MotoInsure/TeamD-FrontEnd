@@ -10,7 +10,7 @@ import { Sms } from '../sms.model';
 })
 export class MessageService {
   baseUri : string = "http://localhost:8980/sms/";
-  baseUri1 :string = "http://localhost:8980/email"
+  baseUri1 :string = "http://localhost:8980/email/"
 
   constructor(private http:HttpClient, private router:Router) { }
 
@@ -18,7 +18,7 @@ export class MessageService {
     return this.http.post(this.baseUri+"sendSms",sms).toPromise();
   }
   async sendEmail(email:string){
-    return this.http.get(this.baseUri+"sendMail"+email).toPromise();
+    return this.http.get(this.baseUri1+"sendMail/"+email).toPromise();
   }
 
   

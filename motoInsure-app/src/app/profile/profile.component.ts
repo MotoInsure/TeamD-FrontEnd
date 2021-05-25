@@ -1,3 +1,7 @@
+
+//@author:Kajal Tiwari
+//@coauthor:Jai Baheti
+
 import { Component, OnInit } from '@angular/core';
 import { Policy } from '../policy.model';
 import { UserService } from '../services/user.service';
