@@ -59,14 +59,14 @@ export class PaymentComponent implements OnInit {
     this.service.getPolicyByUserid(user.id).then(
       (result:Policy)=>{
         policy = result;
-        console.log(policy);
+      //  console.log(policy);
+      localStorage.setItem("policy",JSON.stringify(policy));
       
-
       }
       
     
     );
-    
+
     this.isRequested = true;
     this.sendEmail();
     
