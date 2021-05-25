@@ -65,12 +65,11 @@ export class PaymentComponent implements OnInit {
         //console.log(policy);
         console.log(policy);
       
-
       }
       
     
     );
-    
+
     this.isRequested = true;
     this.sendEmail();
     

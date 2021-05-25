@@ -3,10 +3,11 @@ co-author : (background-image and nav bar) Theres Thomas, Shruti Mittal, Jai Bah
 
  
 .bg{ 
-    background: url(../../assets/image/x.jpg)  no-repeat center; 
-       /* height: 100vh;  */
-       align-items: center;
-       -webkit-background-size: cover;
+    background: url(../../assets/image/x.jpg) no-repeat center; 
+       height: 100vh;  
+       width: 100%;
+       -webkit-background-size:cover;
+
 } 
 .navbar-text{
     position: absolute;

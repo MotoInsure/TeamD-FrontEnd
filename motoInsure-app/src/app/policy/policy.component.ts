@@ -68,11 +68,6 @@ export class PolicyComponent implements OnInit {
     );
 
   }
-  
-  getUserDetails(){
-    let user : User;
-    user = JSON.parse(localStorage.getItem("user"));
-  }
 
   navigate(num : number){
     console.log(num);
