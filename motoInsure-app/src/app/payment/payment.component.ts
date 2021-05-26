@@ -3,6 +3,7 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 import { Policy } from '../policy.model';
 import { PolicyComponent } from '../policy/policy.component';
 import { MessageService } from '../services/message.service';
@@ -25,7 +26,7 @@ export class PaymentComponent implements OnInit {
   prit:boolean=false;
   email:string;
 
-  constructor(private formBuilder: FormBuilder,private service:UserService, private paymentService: PaymentService, private msgservice:MessageService) {
+  constructor(private formBuilder: FormBuilder,private service:UserService,private router:Router, private paymentService: PaymentService, private msgservice:MessageService) {
 
    }
 
@@ -76,6 +77,9 @@ export class PaymentComponent implements OnInit {
   }
   print(){
     this.prit=true;
+  }
+  back(){
+    this.router.navigate(['policy']);
   }
 
   sendEmail(){

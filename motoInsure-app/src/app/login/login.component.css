@@ -9,10 +9,10 @@ margin: 0;
 font-family: 'poppins',sans-serif;
  } 
 .bg{ 
- background: url(../../assets/image/d.jpg) no-repeat center; 
+ background: url(../../assets/image/Reg_bg.jpeg) no-repeat center; 
     display: flex; 
     width: 100%;
-    height: 100vh; 
+    height: 100vh;
     align-items: center;
     -webkit-background-size:cover;
  }   
@@ -23,7 +23,7 @@ font-family: 'poppins',sans-serif;
   transform: translate(-50%, -50%);
 }
  .container {
-      margin: 50px auto;
+         
       height: 300px;
       max-height: fit-content;
       max-width: 450px;
@@ -34,13 +34,11 @@ font-family: 'poppins',sans-serif;
     }
     .title {
       text-align: left;
-      letter-spacing: 3px;
       width: 480px;
       max-width: 100%;
-      margin-bottom: 5px;
-      padding: 5px 5px 20px;
+      padding: 8px 8px 20px;
       font-weight: bold;
-      font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+      font-family:Verdana, Geneva, Tahoma, sans-serif ;
       font-size: 30px;
       color:white;
       background-color:rgba(46, 43, 49, 0.925);
@@ -49,6 +47,7 @@ font-family: 'poppins',sans-serif;
     table{
         align-self: center;
         font-weight: 500;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: 16px;
     }
      
@@ -58,7 +57,7 @@ font-family: 'poppins',sans-serif;
     }
      
     input[type=text], input[type=password], input[type=email] {
-      margin: 5px;
+      margin: 8px 5px 8px;
       padding: 0 10px;
       font-size: 16px;
       width: 230px;
@@ -73,15 +72,19 @@ font-family: 'poppins',sans-serif;
       -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
       box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
     }
-     
-    input[type=text]:focus, input[type=password]:focus {
-      border-color: #12b5eb;
-      outline-color: #dceefc;
-      outline-offset: 0;
+    button{
+      padding-left: 10px;
+      padding-top: 5px;
+      margin:8px 8px 8px;
+      border-radius: 8px;
+      background: linear-gradient(135deg,#d87bf0,rgb(84, 181, 194));
+      color:oldlace;
+      font-size: medium;
+      font-weight: 500;
     }
-     
+
     
-      dropdown { 
+      .dropdown { 
         float: left;
         overflow: hidden;
       }

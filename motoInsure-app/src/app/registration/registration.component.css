@@ -8,28 +8,13 @@ margin: 0;
  box-sizing: border-box; 
 font-family: 'poppins',sans-serif;
  } 
- /*.bg-img{
-  background:url('/assets/image/car.jpeg.jpeg') ;
-  min-height: 100vh;
-  background-position:right;
-  width: 100%;
-  -webkit-background-size: cover;
- }*/
 .bg{ 
  background: url(../../assets/image/Reg_bg.jpeg) no-repeat center ; 
     display: flex; 
     height: 100vh; 
-    /*width: 100%;
-    align-items: center;*/
     
    -webkit-background-size:cover;
  } 
-/* .navbar-text{
-    position: absolute;
-    top: 50%;
-    left: 48%;
-    transform: translate(-50%, -50%);
-}*/
 .container{
   margin-top: 25px;
   margin-left: 40px;
@@ -67,7 +52,7 @@ font-family: 'poppins',sans-serif;
       height: 45px;
       width: 100%;
 }
-dropdown {
+.dropdown {
     float: left;
     overflow: hidden;
   }
@@ -105,16 +90,17 @@ button[type=submit]{
   padding-left: 10px;
   padding-top: 5px;
   border-radius: 8px;
-  border-color:pink;
-  background-color:rgb(5, 102, 102);
+  border-color:rgb(71, 7, 18);
+  background: linear-gradient(135deg,#d375bf,#222e6e);
   color:oldlace;
   font-size: medium;
   font-weight: 500;
 }
 #partitioned {
   letter-spacing: 15px;
-  border:none ;
+  border-color:gray ;
   background-position-x: 45px;
+  background-color: lightgray;
 
 }
 .navbar-text{

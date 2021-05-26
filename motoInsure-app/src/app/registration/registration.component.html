@@ -12,12 +12,8 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- <button class="dropbtn">Move To 
-          <i class="fa fa-caret-down"></i>
-        </button> -->
         <div class="dropdown-content">
           <a href="#">Home </a>
-          <a href='profile'>Profile </a>
           <a  [routerLink]="['login']">Login </a>
         </div>
       </div> 
@@ -102,15 +98,13 @@
                     <label>City</label>
                     <input type="text" name="City" [(ngModel)]=user.city required pattern="[A-Z a-z]{3,}" placeholder="City" class='form-control' formControlName="City">
                 </div>
-
             	</form>
-
        <form (ngSubmit)="sendSms()">
-        <button type="submit" [hidden]=isValid>Send OTP</button>
+        <button type="submit" class="btn btn-sm" [hidden]=isValid>Send OTP</button>
         </form>
         <div *ngIf="verify">Enter OTP
             <span ><input id="partitioned" type="text" name="UserOtp" inputmode="numeric" maxlength="6" required pattern="[0-9]" [(ngModel)]=userOtp/>
-                <button type="submit" (click)="validateOtp()">Verify User</button>
+                <button type="submit" class="btn btn-sm" (click)="validateOtp()">Verify User</button>
         </span> 
         </div>
 	</div>
