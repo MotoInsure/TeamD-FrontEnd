@@ -35,23 +35,16 @@ export class UserService {
     ;
   }
 
-  // forgotPassword(userName:string): Observable<string>{
-  //   return this.http.get<string>(this.baseUri+"forgotPwd/"+userName);
-  // }
   async forgotPassword(userName:string){
     return this.http.get<User>(this.baseUri+"forgotPwd/"+userName).toPromise();
   }
 
   async addVehicle(registration:string, user :User){
-    // let user =User;
-    // user = JSON.parse(localStorage.getItem("user"));
-    //this.http.post(this.baseUri+"addVehicle/502/"+registration,user).toPromise();
     this.http.post(this.baseUri+"addVehicle/"+user.id+"/"+registration,user).toPromise();
   }
 
   async addPolicy(policyId:number,user:User){
     this.http.post(this.baseUri+"addPolicyToUser/502/"+policyId,user).toPromise();
-    //this.http.post(this.baseUri+"addPolicyToUser/"+user.id+"/"+policyId,user).toPromise();
   }
   
   async getPriceOfVehicle(registrationNo:string){

@@ -3,10 +3,11 @@ co-author : (background-image and nav bar) Theres Thomas, Shruti Mittal, Jai Bah
 
  
 .bg{ 
-    background: url(../../assets/image/x.jpg)  no-repeat center; 
-       /* height: 100vh;  */
-       align-items: center;
-       -webkit-background-size: cover;
+    background: url(../../assets/image/x.jpg) no-repeat center; 
+       height: 100vh;  
+       width: 100%;
+       -webkit-background-size:cover;
+
 } 
 .navbar-text{
     position: absolute;
@@ -33,16 +34,6 @@ dropdown {
     overflow: hidden;
   }
   
-  /* .dropdown .dropbtn {
-    font-size: 16px;  
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-  } */
   
   .navbar a:hover, .dropdown:hover .dropbtn {
     background-color: rgb(105, 163, 149);

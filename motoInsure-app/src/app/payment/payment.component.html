@@ -14,13 +14,10 @@ co-author : Jai Baheti-->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <!-- <button class="dropbtn">Move To 
-              <i class="fa fa-caret-down"></i>
-            </button> -->
             <div class="dropdown-content">
               <a href="#">Home </a>
-              <a href="#">Profile </a>
-              <a (click)="logout()">Logout </a>
+              <a href='profile'>Profile </a>
+              <a href="#">Logout </a>
             </div>
           </div>
         </div>
@@ -47,15 +44,10 @@ co-author : Jai Baheti-->
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label for="ccnumber">Card Number</label>
-                                        <!-- <div class="input-group"> -->
+                                    
                                             <input formControlName="cardNumber" class="form-control" type="text" placeholder="0000 0000 0000 0000" autocomplete="email" required>
                                             <p *ngIf="paymentForm.controls.cardNumber.invalid && paymentForm.controls.cardNumber.dirty" class="alert alert-danger">Enter 16 digit valid number</p>
-                                            <!-- <div class="input-group-append">
-                                                <span class="input-group-text">
-                                                    <i class="mdi mdi-credit-card"></i>
-                                                </span>
-                                            </div> -->
-                                        <!-- </div> -->
+                                            
                                     </div>
                                 </div>
                             </div>
@@ -94,13 +86,7 @@ co-author : Jai Baheti-->
                                         <option>2031</option>
                                     </select>
                                 </div>
-                                <!-- <div class="col-sm-4">
-                                    <div class="form-group">
-                                        <label for="cvv">CVV</label>
-                                        <input formControlName="cvv" class="form-control" id="cvv" type="text" placeholder="cvv">
-                                        <p *ngIf="paymentForm.controls.cvv.errors" class="alert alert-danger">X</p>
-                                    </div>
-                                </div> -->
+                                
                             </div>
                             <div class ="row">
                                 <div class="col-sm-12">

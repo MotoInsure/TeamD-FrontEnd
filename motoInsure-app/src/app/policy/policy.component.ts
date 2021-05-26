@@ -68,18 +68,12 @@ export class PolicyComponent implements OnInit {
     );
 
   }
-  
-  getUserDetails(){
-    let user : User;
-    user = JSON.parse(localStorage.getItem("user"));
-  }
 
   navigate(num : number){
     console.log(num);
 
     this.policyObj.maxClaimAmount = this.maxClaimAmount;
     this.policyObj.idv = this.maxClaimAmount;
-    // this.policyObj.purchasedDate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate());
     this.newPurchasedDate = new Date();
     console.log(this.newPurchasedDate.getMonth());
     this.policyObj.purchasedDate = this.newPurchasedDate.getFullYear() +"-"+("0"+this.newPurchasedDate.getMonth()).slice(-2)+"-"+this.newPurchasedDate.getDate();

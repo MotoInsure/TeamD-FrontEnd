@@ -1,0 +1,36 @@
+/**
+@author:Kajal Tiwari
+@version: 1.0
+
+*/
+.bg{ 
+ background: url(../../assets/image/p.jpg) no-repeat center ; 
+    display: flex; 
+    height: 100vh;
+    max-height: 100%; 
+    width: 100%; 
+    -webkit-background-size:cover;
+ } 
+.container{
+    -moz-box-align: center;
+    width: 450px;
+    height: 700px;
+    margin-top: 100px;
+
+}
+.title{
+    height: 38px;
+    font-size: 25px;
+    font-weight: 500;
+    background-color: rgb(159, 159, 223);
+    text-align: center;
+    padding: 8px 5px 5px;
+
+}
+table{
+    position: relative;
+    font-size: 16px;
+    color: rgb(20, 13, 2);
+    background-color:lightslategrey;
+    font-family: Georgia, 'Times New Roman', Times, serif;   
+}

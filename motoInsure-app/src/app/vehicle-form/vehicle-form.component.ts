@@ -55,8 +55,6 @@ export class VehicleFormComponent implements OnInit {
  
   
   showIdv(){ //(work to be done)populate the vehicle object with registration no and price (when user proceeds with or without reg. no)
-    // this.vehicleObj.purchasingYear=this.vehicleForm.value.PurchasingYear;
-    // this.vehicleObj.price = this.vehicleForm.value.Price;
     this.vehicleObj.purchasingYear=this.year;
     this.vehicleObj.price = this.price;
     console.log(this.vehicleObj);
@@ -99,13 +97,6 @@ this.variants = this.getVariant().filter((item) => {
 return item.m_id ===Number(m_id)
 });
 }
-// onSelectVariant(va_id: number) {
-// this.selectedVariant = va_id;
-// this.cities = this.getCity().filter((item) => {
-// return item.va_id === Number(va_id)
-//     });
-//     }
- 
 getVehType() {
 return [
 { id: 1, name: 'Two Wheeler' },

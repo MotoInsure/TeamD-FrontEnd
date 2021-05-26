@@ -51,6 +51,7 @@ export class PaymentComponent implements OnInit {
 
     );
     this.isPaid = true;
+    this.sendEmail();
     
   }
   getPolicyDetails(){
@@ -62,18 +63,13 @@ export class PaymentComponent implements OnInit {
         policy = result;
         if(policy !==null)
         localStorage.setItem("policy",JSON.stringify(policy));
-        //console.log(policy);
-        console.log(policy);
-      
-
+        
       }
       
     
     );
-    
-    this.isRequested = true;
-    this.sendEmail();
-    
+
+    this.isRequested = true; 
   }
   logout(){
     this.service.logout();
@@ -83,7 +79,7 @@ export class PaymentComponent implements OnInit {
   }
 
   sendEmail(){
-    this.email="kajal1610185@akgec.ac.in";
+    this.email=this.user.email;
     this.msgservice.sendEmail(this.email);
   }
 }
