@@ -26,7 +26,7 @@
   </nav>
 <div class="bg">
 	<div class="container">
-		<div class="title"> Register Here </div>
+		<div class="title"> Register Here </div><br>
 		<form (ngSubmit)="validate()" [formGroup]="RegistrationForm">
             <span [hidden]=!sameUser class="alert-danger" >User Exists</span>
             <div class="row">
@@ -102,7 +102,9 @@
                     <label>City</label>
                     <input type="text" name="City" [(ngModel)]=user.city required pattern="[A-Z a-z]{3,}" placeholder="City" class='form-control' formControlName="City">
                 </div>
+
             	</form>
+
        <form (ngSubmit)="sendSms()">
         <button type="submit" [hidden]=isValid>Send OTP</button>
         </form>
