@@ -14,7 +14,6 @@
         </button>
         <div class="dropdown-content">
           <a href="#">Home </a>
-          <a href='profile'>Profile </a>
           <a  [routerLink]="['login']">Login </a>
         </div>
       </div> 
@@ -101,11 +100,11 @@
                 </div>
             	</form>
        <form (ngSubmit)="sendSms()">
-        <button type="submit" [hidden]=isValid>Send OTP</button>
+        <button type="submit" class="btn btn-sm" [hidden]=isValid>Send OTP</button>
         </form>
         <div *ngIf="verify">Enter OTP
             <span ><input id="partitioned" type="text" name="UserOtp" inputmode="numeric" maxlength="6" required pattern="[0-9]" [(ngModel)]=userOtp/>
-                <button type="submit" (click)="validateOtp()">Verify User</button>
+                <button type="submit" class="btn btn-sm" (click)="validateOtp()">Verify User</button>
         </span> 
         </div>
 	</div>

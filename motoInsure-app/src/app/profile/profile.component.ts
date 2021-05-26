@@ -3,6 +3,7 @@
 //@coauthor:Jai Baheti
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Policy } from '../policy.model';
 import { UserService } from '../services/user.service';
 import { User } from '../user.model';
@@ -15,9 +16,10 @@ import { User } from '../user.model';
 export class ProfileComponent implements OnInit {
   isRequested : boolean = false;
   user:User;
+  policy:Policy
 
 
-  constructor(private service:UserService) {
+  constructor(private service:UserService, private router:Router) {
     this.user=new User();
    }
 
@@ -26,10 +28,12 @@ export class ProfileComponent implements OnInit {
   }
   
   getPolicyDetails(){
-    let policy:Policy;
-    policy=JSON.parse(localStorage.getItem("policy"));
-    console.log(policy)
+    this.policy=JSON.parse(localStorage.getItem("policy"));
     this.isRequested=true;
+    
+  }
+  back(){
+    this.router.navigate(['policy']);
   }
 
 }

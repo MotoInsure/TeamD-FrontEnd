@@ -25,55 +25,36 @@
         </tr>
     </tbody>
     </table>
-        <button type="button" (click)="getPolicyDetails()" class="btn btn-info"> Your Policy Details></button>
+        <button type="button" (click)="getPolicyDetails()" class="btn btn-info"> Your Policy Details</button>
+        <button type="button" (click)="back()" class="btn btn-warning">Go back</button>
         <div class="container1" *ngIf = "isRequested">
-            <div class="padding">
-            <div class = "row" style="padding-top: 3%;">
-              
-              <div class = "col-sm-4">
-              <div class ="card1" style="background-color:  white"> 
+            <table class="table table-light table-striped">
+                <tbody>
+                <tr>
+                    <td><strong>Policy</strong></td>
+                    <td>{{policy.type }}</td>
+                </tr>
+                <tr>
+                    <td><strong>IDV</strong></td>
+                    <td>₹ {{ policy.idv }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Max CLaim Amount</strong></td>
+                    <td>₹ {{ policy.maxClaimAmount }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Purchased Date</strong></td>
+                    <td>{{ policy.purchasedDate }}</td>
+                </tr>
+                <tr>
                 
-                <div class="card-header" style=" background-color: rgb(173, 196, 197); padding-left: 18%;
-                  font-size: 99%;"><strong>Here's your Policy Details</strong></div>
-                <div class = "card-body" >
-                
-                  
-                <table class="table table-light table-striped">
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td><strong>Policy Type</strong></td>
-                        <td>{{ policy.type }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td><strong>IDV</strong></td>
-                        <td>{{ policy.idv }}</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td><strong>Max Claim Amount</strong></td>
-                        <td>{{ policy.maxClaimAmount }}</td>
-                    </tr>
-        
-                    <tr>
-                        <th scope="row">4</th>
-                        <td><strong>Purchased Date</strong></td>
-                        <td>{{ policy.purchasedDate }}</td>
-                    </tr>
-        
-                    <tr>
-                    <th scope="row">5</th>
-                        <td><strong>Expiry Date</strong> </td>
-                        <td>{{ policy.expiryDate }}</td>
-                    </tr>
-                    </tbody>
-                </table>
-                </div>
-              </div>
-              </div>
-              <div class = "col-sm-4"></div>
-            </div>        
+                    <td><strong>Expiry Date</strong> </td>
+                    <td>{{ policy.expiryDate }}</td>
+                </tr>
+            </tbody>
+            </table>
+            </div>         
+                    
 </div> 
 </div>
 
